@@ -244,6 +244,14 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
 .ttx{display:grid;gap:6px}
 .tool .pcap b{font-size:inherit;margin:0;color:var(--pink)}
 .tool .pcap span{font-size:13px}
+
+.wall .wide{grid-column:span 3;display:flex;align-items:end;gap:18px;flex-wrap:wrap;text-decoration:none;color:inherit;padding:22px 18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wall .wide span{max-width:none;padding-bottom:8px}
+.wall a.wide:hover span{color:var(--pink)}
+.subs{display:flex;align-items:end;gap:14px;margin:10px 0 22px}
+.subs b{font:400 clamp(56px,6vw,96px)/.85 var(--f-disp);color:var(--pink)}
+.subs span{color:var(--soft);padding-bottom:6px}
+@media (max-width:860px){.wall .wide{grid-column:span 1;display:block}}
 </style>
 </head>
 <body class="armed">
@@ -277,6 +285,7 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
       <div class="cell" data-build><b data-count="10">0</b><span>platforms i've grown them on</span></div>
       <div class="cell" data-build><b data-count="7" data-suffix="+">0</b><span>years in healthcare sales and corporate healthcare</span></div>
       <div class="cell" data-build><b data-count="5">0</b><span>anthropic academy certificates, plus openai certifications</span></div>
+      <a class="cell wide pk" data-build href="#write"><b data-count="210" data-suffix="+">0</b><span>newsletter subscribers across linkedin and substack</span></a>
     </div>
   </section>
 
@@ -386,7 +395,8 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
       <h2 class="disp" data-build data-type>i write<br><em>every week.</em></h2>
       <div>
         <p data-build>ai, in my opinion. an essay every week about what ai actually does to work and to people, from someone building it.</p>
-        <div class="btns" data-build><a class="btn solid" href="https://aiimo.substack.com" target="_blank" rel="noopener">read the newsletter</a></div>
+        <p class="subs" data-build><b data-count="210" data-suffix="+">0</b><span>subscribers across linkedin and substack</span></p>
+        <div class="btns" data-build><a class="btn solid" href="https://aiimo.substack.com" target="_blank" rel="noopener">read the newsletter</a><a class="btn" href="https://www.linkedin.com/newsletters/ai-in-my-opinion-7518478320943071232/" target="_blank" rel="noopener">subscribe on linkedin</a></div>
       </div>
     </div>
   </section>
