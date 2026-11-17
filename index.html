@@ -186,6 +186,10 @@ section.nx{padding-top:0}
 .ecov{display:block;width:100%;aspect-ratio:1200/630;object-fit:cover;border:1.5px solid var(--ink);border-radius:8px;background:#fff;box-shadow:4px 4px 0 var(--ink);transition:transform .3s,box-shadow .3s}
 .essay:hover .ecov{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--pink)}
 .wall.tally{margin-bottom:44px}
+.prev.res{aspect-ratio:auto;min-height:150px;display:grid;align-content:center;gap:8px;padding:22px 24px}
+.prev.res b{font:400 clamp(30px,3.3vw,52px)/.95 var(--f-disp);text-transform:uppercase}
+.prev.res span{color:var(--soft);font-size:14.5px}
+.sysc h3{overflow-wrap:anywhere}
 .player{position:fixed;inset:0;z-index:60;background:var(--ink);display:grid;grid-template-rows:52px 1fr}
 .player[hidden]{display:none}
 .player .pbar{display:flex;align-items:center;gap:16px;padding:0 clamp(16px,4vw,48px);color:#fff;font-size:15px;min-width:0}
@@ -251,31 +255,57 @@ section.nx{padding-top:0}
       <div class="cell" data-build><b data-count="10">0</b><span>interactive editions and essays published</span></div>
       <div class="cell" data-build><b data-count="2">0</b><span>ai agents built from jobs i've done myself</span></div>
     </div>
-    <div class="kick" data-build style="margin:0 0 6px">three of them, up close</div>
+    <div class="kick" data-build style="margin:0 0 6px">ranked by size</div>
     <div class="systems">
-      <a class="sysc" href="https://github.com/simibharaj/healthcare-bdr-agent" target="_blank" rel="noopener" data-build>
+      <a class="sysc" href="https://github.com/simibharaj" target="_blank" rel="noopener" data-build>
         <span class="num">01</span>
+        <div><h3>66 local business sites</h3><p>custom websites for tampa businesses, each one tuned for design, seo and ai search.</p><div class="tags"><i>web design</i><i>seo</i><i>ai search</i></div></div>
+        <div class="prev res"><b>66</b><span>sites shipped</span></div>
+      </a>
+      <div class="sysc" data-build>
+        <span class="num">02</span>
+        <div><h3>the rep dashboard</h3><p>a dashboard i designed at pfizer so reps could measure their own performance. it drove adoption of an ai targeting tool.</p><div class="tags"><i>dashboards</i><i>adoption</i><i>pharma</i></div></div>
+        <div class="prev res"><b>nationwide</b><span>rolled out across the us branded field force</span></div>
+      </div>
+      <a class="sysc" href="https://github.com/simibharaj/healthcare-bdr-agent" target="_blank" rel="noopener" data-build>
+        <span class="num">03</span>
         <div><h3>bella</h3><p>a healthcare outreach agent built from doing the job and training people to do it. she calls, follows up and books the demo.</p><div class="tags"><i>voice agent</i><i>email sequences</i><i>healthcare</i></div></div>
-        <div class="prev"><div class="bar"><i></i><i></i><i></i></div><div class="body">
-          <div class="call"><span class="dot"></span><div><b>outbound call</b><br><span style="color:var(--soft)">practice manager · gi clinic</span></div></div>
-          <div class="wave"><i style="height:12px"></i><i style="height:26px"></i><i style="height:18px"></i><i style="height:32px"></i><i style="height:14px"></i><i style="height:28px"></i><i style="height:20px"></i><i style="height:30px"></i><i style="height:12px"></i><i style="height:24px"></i></div>
-          <span class="line">do you have time thursday?</span><span class="line me">thursday at 2 works.</span>
-        </div></div>
+        <div class="prev res"><b>call one: worked</b><span>her first full test call ran start to finish</span></div>
       </a>
       <a class="sysc" href="https://ecotechmed.com" target="_blank" rel="noopener" data-build>
-        <span class="num">02</span>
+        <span class="num">04</span>
         <div><h3>imaging scout</h3><p>a parts-sourcing agent for my dad's medical imaging business. it finds the part, gets the quotes and flags what needs a human yes.</p><div class="tags"><i>sourcing agent</i><i>medical imaging</i></div></div>
-        <div class="prev"><div class="bar"><i></i><i></i><i></i></div><div class="body steps">
-          <div><b>ct tube, found</b><span class="ok">3 sellers</span></div>
-          <div><b>shipping, quoted</b><span class="ok">done</span></div>
-          <div><b>price check</b><span class="ok">within range</span></div>
-          <div><b>purchase</b><span class="wait">needs approval</span></div>
-        </div></div>
+        <div class="prev res"><b>live</b><span>running at ecotechmed.com</span></div>
       </a>
       <a class="sysc" href="#write" data-build>
-        <span class="num">03</span>
+        <span class="num">05</span>
         <div><h3>ai, in my opinion</h3><p>a weekly essay, plus a newsletter you can play. each edition is its own interactive build.</p><div class="tags"><i>interactive editions</i><i>writing</i></div></div>
         <div class="prev cov"><img id="aiCov" alt="cover of the latest edition"></div>
+      </a>
+      <div class="sysc" data-build>
+        <span class="num">06</span>
+        <div><h3>ultrasound into kenyan hospitals</h3><p>eleven years coordinating ultrasound deployment in hospitals in kenya, where i was born, and connecting u.s. clinicians with local providers.</p><div class="tags"><i>deployment</i><i>global health</i></div></div>
+        <div class="prev res"><b>2008 to 2019</b><span>with global ficcs</span></div>
+      </div>
+      <div class="sysc" data-build>
+        <span class="num">07</span>
+        <div><h3>the pricing flowchart</h3><p>a flowchart i built for new hires showing which contracts and pricing applied to which customers.</p><div class="tags"><i>simplifying systems</i><i>training</i></div></div>
+        <div class="prev res"><b>sales force wide</b><span>started as a new-hire tool, then everyone used it</span></div>
+      </div>
+      <a class="sysc" href="https://alienvsprinter.com" target="_blank" rel="noopener" data-build>
+        <span class="num">08</span>
+        <div><h3>alien vs printer</h3><p>the brand, the website and the sales side of a 3d print company i hold equity in.</p><div class="tags"><i>brand</i><i>e-commerce</i><i>3d printing</i></div></div>
+        <div class="prev res"><b>co-owned</b><span>brand, site and sales</span></div>
+      </a>
+      <a class="sysc" href="https://github.com/simibharaj/retirement-income-calculator" target="_blank" rel="noopener" data-build>
+        <span class="num">09</span>
+        <div><h3>retirement income calculator</h3><p>a calculator i coded myself that shows people where their retirement income actually comes from.</p><div class="tags"><i>python</i><i>finance</i></div></div>
+        <div class="prev res"><b>hand coded</b><span>no template, no builder</span></div>
+      </a>
+      <a class="sysc" href="https://github.com/simibharaj/ai-usage-archive" target="_blank" rel="noopener" data-build>
+        <span class="num">10</span>
+        <div><h3>the usage archive</h3><p>every prompt and hour i've put into ai since june 2025, archived and turned into a dashboard.</p><div class="tags"><i>dashboards</i><i>data</i></div></div>
+        <div class="prev res"><b>24,000+</b><span>prompts logged</span></div>
       </a>
     </div>
     <div class="repos" id="repos"></div>
