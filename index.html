@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://simibharaj.me https://simibharaj.github.io https://gethealthcarebdr.com https://www.gethealthcarebdr.com https://alienvsprinter.com https://www.alienvsprinter.com https://tapcardstampa.com https://www.tapcardstampa.com">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>simi bharaj · software engineer</title>
 <meta name="description" content="simi bharaj. software engineer. ai design and development. simplifying complex systems.">
@@ -89,7 +90,6 @@ h2.disp{font-size:clamp(52px,9.5vw,150px)}
 .sysc .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
 .sysc .tags i{font-style:normal;font-size:12.5px;font-weight:600;border:1px solid var(--line);padding:5px 9px;border-radius:999px;background:#fff}
 .prev{position:relative;aspect-ratio:16/10;border-radius:10px;background:#fff;border:1.5px solid var(--ink);overflow:hidden;box-shadow:6px 6px 0 var(--ink);transition:transform .3s,box-shadow .3s}
-.sysc:hover .prev{transform:translate(-4px,-4px);box-shadow:10px 10px 0 var(--pink)}
 .prev .bar{height:24px;border-bottom:1px solid var(--line);display:flex;gap:5px;align-items:center;padding:0 9px}
 .prev .bar i{width:7px;height:7px;border-radius:50%;background:var(--line)}
 .prev .body{position:absolute;inset:24px 0 0;padding:14px;display:grid;gap:8px;align-content:start;font-size:12.5px}
@@ -175,8 +175,6 @@ section.nx{padding-top:0}
 .sysc.ed h3{font-size:clamp(28px,3.1vw,46px)}
 .prev.cov{background:#111}
 .prev.cov img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.prev.cov span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;color:var(--ink);padding:12px 18px;border-radius:999px;font:600 15px/1 var(--f-body);white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:background .2s,color .2s}
-.sysc.ed:hover .prev.cov span{background:var(--pink);color:#fff}
 .essay{display:grid;grid-template-columns:clamp(104px,19vw,230px) minmax(0,1fr) auto;gap:20px;align-items:center;padding:20px 0;border-top:1.5px solid var(--ink);text-decoration:none}
 .essay b{display:block;font:500 clamp(20px,2.2vw,30px)/1.2 var(--f-body);letter-spacing:-.02em}
 .essay span{display:block;color:var(--soft);margin-top:4px}
@@ -221,6 +219,31 @@ section.nx{padding-top:0}
 .player .pimg img{max-width:100%;max-height:calc(100vh - 116px);height:auto;border-radius:4px;background:#fff}
 @media (max-width:1000px){.tools{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.tools{grid-template-columns:1fr}}
+
+/* live previews: the real thing running small. full window on click. */
+.pw{display:grid;gap:14px;min-width:0}
+.stx,.ttx{display:block;color:inherit;text-decoration:none}
+.stx:hover h3,.ttx:hover b{color:var(--pink)}
+a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
+.prev.lv{cursor:pointer}
+.livepv .prev.lv{cursor:auto}
+.prev.lv iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:#fff;opacity:0;transition:opacity .4s}
+.prev.lv.on iframe{opacity:1}
+.pcap{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:13.5px;color:var(--soft)}
+.pcap b{color:var(--pink);font-weight:600}
+.pcap .lv-on{display:none}
+.livepv .pcap .lv-on{display:inline}
+.livepv .pcap .lv-off{display:none}
+.pcap .acts{display:flex;gap:16px;margin-left:auto;white-space:nowrap}
+.pfull{border:0;background:none;padding:0;font:600 14px/1.2 var(--f-body);color:var(--ink);cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px;font-style:normal}
+.pfull:hover,a.sysc:hover .pfull{color:var(--pink)}
+.pfull.lite{font-weight:500;color:var(--soft)}
+.tool .prev{box-shadow:none;border-radius:4px}
+.tool .prev img{border:0;border-radius:0}
+.tool .pcap{font-size:13px}
+.ttx{display:grid;gap:6px}
+.tool .pcap b{font-size:inherit;margin:0;color:var(--pink)}
+.tool .pcap span{font-size:13px}
 </style>
 </head>
 <body class="armed">
@@ -267,32 +290,32 @@ section.nx{padding-top:0}
     </div>
     <div class="wall tally">
       <div class="cell pk" data-build><b data-count="66">0</b><span>custom websites for tampa businesses</span></div>
-      <div class="cell" data-build><b data-count="17">0</b><span>public repos on github</span></div>
+      <div class="cell" data-build><b data-count="182">0</b><span>github contributions in the last year</span></div>
       <div class="cell" data-build><b data-count="10">0</b><span>interactive editions and essays published</span></div>
       <div class="cell" data-build><b data-count="2">0</b><span>ai agents built from jobs i've done myself</span></div>
     </div>
     <div class="kick" data-build style="margin:0 0 6px">the work</div>
     <div class="systems">
-      <a class="sysc" href="one-patient/" target="_blank" rel="noopener" data-demo="one-patient/" data-title="one patient · tap an organ" data-build>
+      <div class="sysc live" data-build>
         <span class="num">01</span>
-        <div><h3>one patient</h3><p>microsoft says its ai out-diagnoses doctors, so i ran their benchmark myself on gpt-5 and built a 3d body map of one case. tap an organ to see what the ai ordered and what it missed.</p><div class="tags"><i>python</i><i>sdbench</i><i>3d</i><i>healthcare ai</i></div></div>
-        <div class="prev cov"><img src="work/one-patient.webp" alt="one patient: a 3d body map of a gpt-5 diagnosis run" loading="lazy"><span>try it here</span></div>
-      </a>
-      <a class="sysc" href="https://gethealthcarebdr.com" target="_blank" rel="noopener" data-demo="https://gethealthcarebdr.com/" data-title="bella · hear the call, walk through her work" data-build>
+        <a class="stx" href="one-patient/" target="_blank" rel="noopener" data-demo="one-patient/" data-title="one patient · tap an organ"><div><h3>one patient</h3><p>microsoft says its ai out-diagnoses doctors, so i ran their benchmark myself on gpt-5 and built a 3d body map of one case. tap an organ to see what the ai ordered and what it missed.</p><div class="tags"><i>python</i><i>sdbench</i><i>3d</i><i>healthcare ai</i></div></div></a>
+        <div class="pw"><div class="prev cov lv" data-src="one-patient/" data-vw="1200" data-demo="one-patient/" data-title="one patient · tap an organ"><img src="work/one-patient.webp" alt="one patient: a 3d body map of a gpt-5 diagnosis run" loading="lazy"></div><div class="pcap"><span class="lv-on"><b>live</b> · click around in it</span><span class="lv-off">tap to open it live</span><span class="acts"><button type="button" class="pfull" data-demo="one-patient/" data-title="one patient · tap an organ">full window ↗</button></span></div></div>
+      </div>
+      <div class="sysc live" data-build>
         <span class="num">02</span>
-        <div><h3>bella</h3><p>a healthcare outreach agent built from doing the job and training people to do it. she calls, follows up and books the demo.</p><div class="tags"><i>voice agent</i><i>email sequences</i><i>healthcare</i><i>call one: worked</i></div></div>
-        <div class="prev cov"><img src="work/bella.webp" alt="the bella site: hear her call and walk through what she does" loading="lazy"><span>try it here</span></div>
-      </a>
-      <a class="sysc" href="https://alienvsprinter.com" target="_blank" rel="noopener" data-demo="https://alienvsprinter.com/" data-title="alien vs printer · the storefront" data-build>
+        <a class="stx" href="https://gethealthcarebdr.com/" target="_blank" rel="noopener" data-demo="https://gethealthcarebdr.com/" data-title="bella · hear the call, walk through her work"><div><h3>bella</h3><p>a healthcare outreach agent built from doing the job and training people to do it. she calls, follows up and books the demo.</p><div class="tags"><i>voice agent</i><i>email sequences</i><i>healthcare</i><i>call one: worked</i></div></div></a>
+        <div class="pw"><div class="prev cov lv" data-src="https://gethealthcarebdr.com/" data-vw="1200" data-demo="https://gethealthcarebdr.com/" data-title="bella · hear the call, walk through her work"><img src="work/bella.webp" alt="the bella site: hear her call and walk through what she does" loading="lazy"></div><div class="pcap"><span class="lv-on"><b>live</b> · click around in it</span><span class="lv-off">tap to open it live</span><span class="acts"><button type="button" class="pfull" data-demo="https://gethealthcarebdr.com/" data-title="bella · hear the call, walk through her work">full window ↗</button></span></div></div>
+      </div>
+      <div class="sysc live" data-build>
         <span class="num">03</span>
-        <div><h3>alien vs printer</h3><p>the brand, the website and the sales side of a 3d print company i hold equity in.</p><div class="tags"><i>brand</i><i>e-commerce</i><i>3d printing</i><i>co-owned</i></div></div>
-        <div class="prev cov"><img src="work/avp.webp" alt="alien vs printer: the storefront home page" loading="lazy"><span>try it here</span></div>
-      </a>
-      <a class="sysc" href="work/tap-cards.webp" data-img="work/tap-cards.webp" data-title="tap cards tampa · the print set" data-build>
+        <a class="stx" href="https://alienvsprinter.com/" target="_blank" rel="noopener" data-demo="https://alienvsprinter.com/" data-title="alien vs printer · the storefront"><div><h3>alien vs printer</h3><p>the brand, the website and the sales side of a 3d print company i hold equity in.</p><div class="tags"><i>brand</i><i>e-commerce</i><i>3d printing</i><i>co-owned</i></div></div></a>
+        <div class="pw"><div class="prev cov lv" data-src="https://alienvsprinter.com/" data-vw="1200" data-demo="https://alienvsprinter.com/" data-title="alien vs printer · the storefront"><img src="work/avp.webp" alt="alien vs printer: the storefront home page" loading="lazy"></div><div class="pcap"><span class="lv-on"><b>live</b> · click around in it</span><span class="lv-off">tap to open it live</span><span class="acts"><button type="button" class="pfull" data-demo="https://alienvsprinter.com/" data-title="alien vs printer · the storefront">full window ↗</button></span></div></div>
+      </div>
+      <div class="sysc live" data-build>
         <span class="num">04</span>
-        <div><h3>tap cards tampa</h3><p>tap-to-review nfc cards for tampa businesses. i priced it, had three ai models research the launch as a council, ranked the prospects and designed the print set myself.</p><div class="tags"><i>nfc</i><i>pricing</i><i>field sales</i><i>print</i></div></div>
-        <div class="prev cov"><img src="work/tap-cards.webp" alt="tap cards tampa: the google review card and the front desk print set" loading="lazy"><span>see it larger</span></div>
-      </a>
+        <a class="stx" href="https://tapcardstampa.com/" target="_blank" rel="noopener" data-demo="https://tapcardstampa.com/" data-title="tap cards tampa · the site"><div><h3>tap cards tampa</h3><p>tap-to-review nfc cards for tampa businesses. i priced it, had three ai models research the launch as a council, ranked the prospects and designed the print set myself.</p><div class="tags"><i>nfc</i><i>pricing</i><i>field sales</i><i>print</i></div></div></a>
+        <div class="pw"><div class="prev cov lv" data-src="https://tapcardstampa.com/" data-vw="1200" data-demo="https://tapcardstampa.com/" data-title="tap cards tampa · the site"><img src="work/tap-site.webp" alt="tap cards tampa: the live site, google review cards for tampa bay" loading="lazy"></div><div class="pcap"><span class="lv-on"><b>live</b> · click around in it</span><span class="lv-off">tap to open it live</span><span class="acts"><button type="button" class="pfull lite" data-img="work/tap-cards.webp" data-title="tap cards tampa · the print set">the print set</button><button type="button" class="pfull" data-demo="https://tapcardstampa.com/" data-title="tap cards tampa · the site">full window ↗</button></span></div></div>
+      </div>
       <div class="sysc" data-build>
         <span class="num">05</span>
         <div><h3>the outbound rebuild</h3><p>at magentiq eye i inherited a two-year-old gi device pipeline stuck in odoo. i moved outreach to instantly, rebuilt the targeting with apollo and gemini and rewrote every sequence around how gi practices actually answer.</p><div class="tags"><i>outbound</i><i>apollo</i><i>instantly</i><i>medical devices</i></div></div>
@@ -301,7 +324,7 @@ section.nx{padding-top:0}
       <a class="sysc" href="work/training-wheels.webp" data-img="work/training-wheels.webp" data-title="training wheels · one warm line to say next" data-build>
         <span class="num">06</span>
         <div><h3>training wheels</h3><p>a next-sentence copilot for insurance calls. i built it from 35 transcripts of my own insurance training so the agent always has one warm line to say and the source behind it.</p><div class="tags"><i>python</i><i>conversation design</i><i>insurance</i></div></div>
-        <div class="prev cov"><img src="work/training-wheels.webp" alt="training wheels: the practice copilot showing one suggested sentence" loading="lazy"><span>see it larger</span></div>
+        <div class="pw"><div class="prev cov"><img src="work/training-wheels.webp" alt="training wheels: the practice copilot showing one suggested sentence" loading="lazy"></div><div class="pcap"><span>screenshot</span><span class="acts"><em class="pfull">see it larger</em></span></div></div>
       </a>
       <div class="sysc" data-build>
         <span class="num">07</span>
@@ -311,12 +334,12 @@ section.nx{padding-top:0}
       <a class="sysc" href="work/revenue-desk.webp" data-img="work/revenue-desk.webp" data-title="the revenue desk · business names blurred" data-build>
         <span class="num">08</span>
         <div><h3>the revenue desk</h3><p>the crm i built for my nfc business. ranked prospects, campaigns, the sales playbook and the daily report live in one app, and every record stays private in the browser.</p><div class="tags"><i>crm</i><i>sales ops</i><i>javascript</i></div></div>
-        <div class="prev cov"><img src="work/revenue-desk.webp" alt="the revenue desk: a prospect pipeline crm, business names blurred" loading="lazy"><span>see it larger</span></div>
+        <div class="pw"><div class="prev cov"><img src="work/revenue-desk.webp" alt="the revenue desk: a prospect pipeline crm, business names blurred" loading="lazy"></div><div class="pcap"><span>screenshot</span><span class="acts"><em class="pfull">see it larger</em></span></div></div>
       </a>
       <a class="sysc" href="work/audits.webp" data-img="work/audits.webp" data-title="a website and seo audit · business name hidden" data-build>
         <span class="num">09</span>
         <div><h3>audits &amp; market research</h3><p>website and seo audits for tampa businesses, plus market research built from county records. each one ends with exactly what to fix first.</p><div class="tags"><i>seo</i><i>local search</i><i>research</i></div></div>
-        <div class="prev cov"><img src="work/audits.webp" alt="page one of a website and seo audit, business name hidden" loading="lazy"><span>see it larger</span></div>
+        <div class="pw"><div class="prev cov"><img src="work/audits.webp" alt="page one of a website and seo audit, business name hidden" loading="lazy"></div><div class="pcap"><span>screenshot</span><span class="acts"><em class="pfull">see it larger</em></span></div></div>
       </a>
       <div class="sysc" data-build>
         <span class="num">10</span>
@@ -328,16 +351,16 @@ section.nx{padding-top:0}
         <div><h3>ai, in my opinion</h3><p>a weekly essay, plus a newsletter you can play. each edition is its own interactive build.</p><div class="tags"><i>interactive editions</i><i>writing</i></div></div>
         <div class="prev cov"><img id="aiCov" alt="cover of the latest edition"></div>
       </a>
-      <a class="sysc" href="retirement-income-calculator/" target="_blank" rel="noopener" data-demo="retirement-income-calculator/" data-title="retirement income calculator · change the numbers" data-build>
+      <div class="sysc live" data-build>
         <span class="num">12</span>
-        <div><h3>retirement income calculator</h3><p>a calculator i coded myself that shows people where their retirement income actually comes from.</p><div class="tags"><i>python</i><i>finance</i><i>hand coded</i></div></div>
-        <div class="prev cov"><img src="work/calc.webp" alt="the calculator: starting balance, cap and floor in, illustrated income out" loading="lazy"><span>try it here</span></div>
-      </a>
-      <a class="sysc" href="ai-usage-archive/dashboard/" target="_blank" rel="noopener" data-demo="ai-usage-archive/dashboard/" data-title="the usage dashboard · sample data" data-build>
+        <a class="stx" href="retirement-income-calculator/" target="_blank" rel="noopener" data-demo="retirement-income-calculator/" data-title="retirement income calculator · change the numbers"><div><h3>retirement income calculator</h3><p>a calculator i coded myself that shows people where their retirement income actually comes from.</p><div class="tags"><i>python</i><i>finance</i><i>hand coded</i></div></div></a>
+        <div class="pw"><div class="prev cov lv" data-src="retirement-income-calculator/" data-vw="1200" data-demo="retirement-income-calculator/" data-title="retirement income calculator · change the numbers"><img src="work/calc.webp" alt="the calculator: starting balance, cap and floor in, illustrated income out" loading="lazy"></div><div class="pcap"><span class="lv-on"><b>live</b> · click around in it</span><span class="lv-off">tap to open it live</span><span class="acts"><button type="button" class="pfull" data-demo="retirement-income-calculator/" data-title="retirement income calculator · change the numbers">full window ↗</button></span></div></div>
+      </div>
+      <div class="sysc live" data-build>
         <span class="num">13</span>
-        <div><h3>the usage archive</h3><p>every prompt and hour i've put into ai since june 2025, archived and turned into a dashboard.</p><div class="tags"><i>dashboards</i><i>data</i><i>24,000+ prompts logged</i></div></div>
-        <div class="prev cov"><img src="work/archive.webp" alt="the ai odometer dashboard, shown with sample data" loading="lazy"><span>try it with sample data</span></div>
-      </a>
+        <a class="stx" href="ai-usage-archive/dashboard/" target="_blank" rel="noopener" data-demo="ai-usage-archive/dashboard/" data-title="the usage dashboard · sample data"><div><h3>the usage archive</h3><p>every prompt and hour i've put into ai since june 2025, archived and turned into a dashboard.</p><div class="tags"><i>dashboards</i><i>data</i><i>24,000+ prompts logged</i></div></div></a>
+        <div class="pw"><div class="prev cov lv" data-src="ai-usage-archive/dashboard/" data-vw="1200" data-demo="ai-usage-archive/dashboard/" data-title="the usage dashboard · sample data"><img src="work/archive.webp" alt="the ai odometer dashboard, shown with sample data" loading="lazy"></div><div class="pcap"><span class="lv-on"><b>live</b> · click around in it</span><span class="lv-off">tap to open it live</span><span class="acts"><button type="button" class="pfull" data-demo="ai-usage-archive/dashboard/" data-title="the usage dashboard · sample data">full window ↗</button></span></div></div>
+      </div>
       <div class="sysc" data-build>
         <span class="num">14</span>
         <div><h3>the pricing flowchart</h3><p>a flowchart i built for new hires showing which contracts and pricing applied to which customers.</p><div class="tags"><i>simplifying systems</i><i>training</i></div></div>
@@ -446,7 +469,7 @@ section.nx{padding-top:0}
 </div>
 </main>
 
-<div class="player" id="player" hidden><div class="pbar"><b id="pT"></b><a id="pOpen" href="#" target="_blank" rel="noopener">open in a new tab ↗</a><button type="button" id="pX">✕ close</button></div><iframe id="pF" title="live preview" allow="autoplay; fullscreen"></iframe><div class="pimg" id="pIW" hidden><img id="pI" alt=""></div><div class="blocked" id="pB" hidden><span>this preview can’t play editions inside the page.</span><a class="btn" id="pB2" href="#" target="_blank" rel="noopener">open it full screen ↗</a></div></div>
+<div class="player" id="player" hidden><div class="pbar"><b id="pT"></b><a id="pOpen" href="#" target="_blank" rel="noopener">open in a new tab ↗</a><button type="button" id="pX">✕ close</button></div><iframe id="pF" title="live preview" allow="autoplay; fullscreen"></iframe><div class="pimg" id="pIW" hidden><img id="pI" alt=""></div><div class="blocked" id="pB" hidden><span>this part opens outside the page.</span><a class="btn" id="pB2" href="#" target="_blank" rel="noopener">open it in a new tab ↗</a></div></div>
 
 <script>
 (function(){
@@ -472,13 +495,27 @@ var ESSAYS=[
  ['apparently, i’m tokenmaxxing','i hit an ai usage limit in the middle of a build.','https://aiimo.substack.com/p/apparently-im-tokenmaxxing','https://substack-post-media.s3.amazonaws.com/public/images/dfcc7071-3381-472d-8d23-1bc60199f03e_2400x1257.png']
 ];
 /* ============ end of content ============ */
-$('eds').innerHTML=EDITIONS.map(function(e,i){return '<a class="sysc ed" data-build data-ed="'+i+'" href="'+EDITION_BASE+e.n+'/" target="_blank" rel="noopener"><span class="num">'+e.n+'</span><div><h3>'+e.t+'</h3><p>'+e.s+'</p><div class="tags"><i>edition '+e.n+'</i><i>plays right here</i></div></div><div class="prev cov"><img src="'+e.img+'" alt="cover of edition '+e.n+'"><span>▶ play it here</span></div></a>';}).join('');
+$('eds').innerHTML=EDITIONS.map(function(e,i){return '<a class="sysc ed" data-build data-ed="'+i+'" href="'+EDITION_BASE+e.n+'/" target="_blank" rel="noopener"><span class="num">'+e.n+'</span><div><h3>'+e.t+'</h3><p>'+e.s+'</p><div class="tags"><i>edition '+e.n+'</i><i>plays right here</i></div></div><div class="pw"><div class="prev cov"><img src="'+e.img+'" alt="cover of edition '+e.n+'"></div><div class="pcap"><span>interactive edition</span><span class="acts"><em class="pfull">play it here</em></span></div></div></a>';}).join('');
 var CDN='https://substackcdn.com/image/fetch/w_640,c_limit,f_auto,q_auto:good,fl_progressive:steep/';
 window.covFail=function(i){var r=i.getAttribute('data-raw');if(r&&i.src!==r){i.src=r;}else{i.closest('.essay').classList.add('nocov');i.remove();}};
 $('essays').innerHTML=ESSAYS.map(function(e){return '<a class="essay" data-build href="'+e[2]+'" target="_blank" rel="noopener">'+(e[3]?'<img class="ecov" loading="lazy" decoding="async" alt="" src="'+CDN+encodeURIComponent(e[3])+'" data-raw="'+e[3]+'" onerror="covFail(this)">':'')+'<span><b>'+e[0]+'</b><span>'+e[1]+'</span></span><em>read ↗</em></a>';}).join('');
-$('tools').innerHTML=TOOLS.map(function(t){var ext=t[4];return '<a class="tool" data-build href="'+t[0]+'" target="_blank" rel="noopener"'+(ext?'':' data-demo="'+t[0]+'" data-title="'+t[1]+'"')+'><img src="'+t[3]+'" alt="'+t[1]+'" loading="lazy"><b>'+t[1]+'</b><span>'+t[2]+'</span><em>'+(ext?'open it on your phone ↗':'try it here')+'</em></a>';}).join('');
+$('tools').innerHTML=TOOLS.map(function(t){var ext=t[4];if(ext)return '<a class="tool" data-build href="'+t[0]+'" target="_blank" rel="noopener"><img src="'+t[3]+'" alt="'+t[1]+'" loading="lazy"><b>'+t[1]+'</b><span>'+t[2]+'</span><em>open it on your phone ↗</em></a>';return '<div class="tool" data-build><div class="prev cov lv" data-src="'+t[0]+'" data-vw="900" data-demo="'+t[0]+'" data-title="'+t[1]+'"><img src="'+t[3]+'" alt="'+t[1]+'" loading="lazy"></div><a class="ttx" href="'+t[0]+'" target="_blank" rel="noopener" data-demo="'+t[0]+'" data-title="'+t[1]+'"><b>'+t[1]+'</b><span>'+t[2]+'</span></a><div class="pcap"><span class="lv-on"><b>live</b> · click around</span><span class="lv-off">tap to open it</span><button type="button" class="pfull" data-demo="'+t[0]+'" data-title="'+t[1]+'">full window ↗</button></div></div>';}).join('');
 $('repos').innerHTML=REPOS.map(function(r){return '<a class="repo" data-build href="https://github.com/simibharaj/'+r[0]+'" target="_blank" rel="noopener"><small>'+r[2]+'</small><b>'+r[0]+'</b><span>'+r[1]+'</span><em>code ↗</em></a>';}).join('');
 $('aiCov').src=EDITIONS[0].img;
+/* live previews: load the real page small while it is near the screen, unload it after */
+var LIVE=matchMedia('(hover:hover) and (pointer:fine) and (min-width:901px)'),lvBlk=0;
+function lvReset(p){var f=p.querySelector('iframe');if(!f)return;p.classList.remove('on');p._n=0;f.src=p.getAttribute('data-src');}
+function lvMode(){document.documentElement.classList.toggle('livepv',LIVE.matches);if(!LIVE.matches)document.querySelectorAll('.lv iframe').forEach(lvOff);}
+function lvFit(p){var f=p.querySelector('iframe');if(!f)return;var vw=+p.getAttribute('data-vw')||1200,s=p.clientWidth/vw;f.style.width=vw+'px';f.style.height=Math.ceil(p.clientHeight/s)+'px';f.style.transform='scale('+s+')';}
+function lvTame(f){try{f.contentWindow.addEventListener('wheel',function(e){e.stopPropagation();e.preventDefault();window.scrollBy(0,e.deltaMode===1?e.deltaY*16:e.deltaY);},{capture:true,passive:false});}catch(err){}}
+function lvOn(p){if(!LIVE.matches||p.querySelector('iframe'))return;var f=document.createElement('iframe');f.title=(p.getAttribute('data-title')||'')+' (live preview)';f.setAttribute('tabindex','-1');f.setAttribute('scrolling','no');f.setAttribute('allow','autoplay; fullscreen');
+  p._n=0;f.addEventListener('load',function(){p._n++;p._t=Date.now();lvTame(f);p.classList.add('on');if(p._n>1&&Date.now()-lvBlk<3000){lvBlk=0;lvReset(p);}});f.src=p.getAttribute('data-src');p.appendChild(f);lvFit(p);}
+function lvOff(f){f.parentNode.classList.remove('on');f.src='about:blank';f.remove();}
+var lvIO=new IntersectionObserver(function(es){es.forEach(function(e){var p=e.target;if(e.isIntersecting)lvOn(p);else{var f=p.querySelector('iframe');if(f)lvOff(f);}});},{rootMargin:'350px 0px'});
+document.querySelectorAll('.prev.lv').forEach(function(p){lvIO.observe(p);});
+addEventListener('resize',function(){document.querySelectorAll('.prev.lv').forEach(lvFit);});
+if(LIVE.addEventListener)LIVE.addEventListener('change',lvMode);lvMode();
+
 
 function typeIn(el){var h=el.innerHTML,tmp=document.createElement('div');tmp.innerHTML=h;var txt=tmp.textContent,n=0;el.classList.add('caret');el.textContent='';
   var iv=setInterval(function(){n+=Math.max(1,Math.round(txt.length/22));if(n>=txt.length){clearInterval(iv);el.innerHTML=h;el.classList.remove('caret');return;}el.textContent=txt.slice(0,n);},40);}
@@ -586,7 +623,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-demo
 $('eds').addEventListener('click',function(e){var a=e.target.closest('[data-ed]');if(!a||e.metaKey||e.ctrlKey)return;e.preventDefault();play(+a.getAttribute('data-ed'));});
 $('pX').addEventListener('click',stop);
 addEventListener('keydown',function(e){if(e.key==='Escape'&&!player.hidden)stop();});
-document.addEventListener('securitypolicyviolation',function(e){if(/frame/.test(e.violatedDirective||'')&&!player.hidden)$('pB').hidden=false;});
+document.addEventListener('securitypolicyviolation',function(e){if(!/frame/.test(e.violatedDirective||''))return;if(!player.hidden){$('pB').hidden=false;return;}lvBlk=Date.now();document.querySelectorAll('.prev.lv').forEach(function(p){if(p._n>1&&Date.now()-p._t<1500){lvBlk=0;lvReset(p);}});});
 })();
 </script>
 </body>
