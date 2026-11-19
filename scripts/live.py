@@ -22,10 +22,17 @@ CONTRIB_SINCE = "2026-09-01"
 FEED = "https://aiimo.substack.com/feed"
 OUT = os.path.join(os.path.dirname(__file__), "..", "data", "live.json")
 UA = {"User-Agent": "simibharaj.me-live-data"}
+# Substack sits behind Cloudflare, which turns away script-looking requests
+BROWSER = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
 
 
 def get(url, accept=None):
-    headers = dict(UA)
+    headers = dict(UA) if "github.com" in url else dict(BROWSER)
     if accept:
         headers["Accept"] = accept
     token = os.environ.get("GITHUB_TOKEN")
