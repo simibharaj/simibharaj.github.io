@@ -1,6 +1,6 @@
 {
  "github": {
-  "contributions": 226,
+  "contributions": 228,
   "since": "2026-09-01",
   "repos": {
    "agent-structured-output-validator": {
@@ -56,7 +56,7 @@
     "lang": "JavaScript"
    },
    "simibharaj.github.io": {
-    "pushed": "2026-11-19T06:11:20Z",
+    "pushed": "2026-11-19T06:14:06Z",
     "lang": "HTML"
    },
    "snake-draft-copilot": {
@@ -76,8 +76,89 @@
   "03",
   "04"
  ],
- "updated": "2026-11-19T06:11:42Z",
- "problems": [
-  "posts: HTTP Error 403: Forbidden"
- ]
+ "updated": "2026-11-19T06:14:26Z",
+ "problems": [],
+ "posts": [
+  {
+   "title": "one chip, one week",
+   "sub": "america voted on ai last tuesday. scroll through what happened next.",
+   "url": "https://aiimo.substack.com/p/edition-04-one-chip-one-week",
+   "date": "2026-11-10",
+   "img": "https://substack-post-media.s3.amazonaws.com/public/images/4432fd8a-1d0f-4c07-8876-81b191cf901c_2400x1260.jpeg",
+   "edition": "04"
+  },
+  {
+   "title": "everyone’s scared ai will end humanity. what if it’s what keeps us alive?",
+   "sub": "who do you trust more with your health: a doctor or a machine?",
+   "url": "https://aiimo.substack.com/p/will-ai-end-or-save-humanity",
+   "date": "2026-11-06",
+   "img": "https://substack-post-media.s3.amazonaws.com/public/images/61534ed5-ce65-430d-be47-894ea6f6be4e_4800x2514.png",
+   "edition": null
+  },
+  {
+   "title": "in china, the ai bubble has already burst",
+   "sub": "a 4 minute flight through what fell, plus a skill that holds up either way",
+   "url": "https://aiimo.substack.com/p/edition-03-in-china-the-ai-bubble",
+   "date": "2026-11-05",
+   "img": "https://substackcdn.com/image/fetch/$s_!Gw11!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1b18a595-384e-4cc8-b786-aea86cc834bb_1536x1024.jpeg",
+   "edition": "03"
+  },
+  {
+   "title": "my first shipped ai product",
+   "sub": "meet bella, my healthcare bdr",
+   "url": "https://aiimo.substack.com/p/my-first-shipped-ai-product",
+   "date": "2026-11-05",
+   "img": "",
+   "edition": null
+  },
+  {
+   "title": "microsoft says its ai out-diagnoses doctors",
+   "sub": "i ran the test myself. then i made it a train ride.",
+   "url": "https://aiimo.substack.com/p/edition-02-microsoft-says-its-ai",
+   "date": "2026-10-27",
+   "img": "https://substackcdn.com/image/fetch/$s_!4DyW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e544df4-d095-447e-879b-a5aedecef3b4_1536x1024.jpeg",
+   "edition": "02"
+  },
+  {
+   "title": "if you’ve never done the job, your agent is just adding to the slop",
+   "sub": "before i built a bdr, i was one.",
+   "url": "https://aiimo.substack.com/p/if-youve-never-done-the-job-your",
+   "date": "2026-10-27",
+   "img": "https://substack-post-media.s3.amazonaws.com/public/images/f219037a-8171-43ed-b991-24c21a6c7ad1_2400x1257.png",
+   "edition": null
+  },
+  {
+   "title": "order exactly what you want",
+   "sub": "six bites. one skill you’ll actually use.",
+   "url": "https://aiimo.substack.com/p/edition-01-order-exactly-what-you",
+   "date": "2026-10-21",
+   "img": "https://substack-post-media.s3.amazonaws.com/public/images/954c6e3f-9213-4023-8577-dbcabce8b86b_1536x1024.jpeg",
+   "edition": "01"
+  },
+  {
+   "title": "i trained a human. then i wrote the playbook for an ai.",
+   "sub": "prompt engineering is just onboarding with worse documentation.",
+   "url": "https://aiimo.substack.com/p/i-trained-a-human-then-i-wrote-the",
+   "date": "2026-10-19",
+   "img": "https://substack-post-media.s3.amazonaws.com/public/images/c8758c18-171c-475d-b383-6cda434a6c6f_2400x1257.png",
+   "edition": null
+  },
+  {
+   "title": "the deployment gap",
+   "sub": "sales was deployment the whole time",
+   "url": "https://aiimo.substack.com/p/the-deployment-gap",
+   "date": "2026-10-06",
+   "img": "https://substack-post-media.s3.amazonaws.com/public/images/b090b3bc-930b-4c66-9a75-24ff0676f7f1_2400x1257.png",
+   "edition": null
+  },
+  {
+   "title": "apparently, i’m tokenmaxxing",
+   "sub": "i hit an ai usage limit in the middle of a build. then i did the least normal thing possible: i audited the entire stack.",
+   "url": "https://aiimo.substack.com/p/apparently-im-tokenmaxxing",
+   "date": "2026-09-25",
+   "img": "https://substack-post-media.s3.amazonaws.com/public/images/dfcc7071-3381-472d-8d23-1bc60199f03e_2400x1257.png",
+   "edition": null
+  }
+ ],
+ "post_count": 10
 }
