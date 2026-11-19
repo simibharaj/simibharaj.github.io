@@ -816,7 +816,7 @@ function mkWheel(box){var W={box:box,el:box.querySelector('.wheel'),ring:box.que
   W.el.addEventListener('wheel',function(ev){if(Math.abs(ev.deltaX)<=Math.abs(ev.deltaY))return;ev.preventDefault();W.acc=(W.acc||0)+ev.deltaX;if(Math.abs(W.acc)>40){W.step(W.acc>0?1:-1);W.acc=0;}},{passive:false});
   W.tick=function(t){var dt=Math.min(.05,(t-(W.last||t))/1000);W.last=t;
     if(!W.drag){W.pos+=(W.target-W.pos)*Math.min(1,dt*7);}
-    var N=n(),c=cur(),R=W.el.clientWidth*(W.el.clientWidth<640?.56:.36),step=.66;
+    var N=n(),c=cur(),R=W.el.clientWidth*(innerWidth<640?.56:.36),step=.66;
     for(var k=0;k<W.items.length;k++){var d=wrap(k-W.pos),a=d*step,ad=Math.abs(d),it=W.items[k];
       var sg=d<0?-1:1,a1=Math.min(ad,1),a2=Math.max(0,ad-1),x=sg*(a1*R*1.0+a2*R*.62),z=-(a1*R*.55+a2*R*.35),ry=-sg*a1*22,sc=ad<1?1.1-ad*.48:.62-a2*.2;
       var front=ad<.5,lift=front&&W.hover&&!W.drag?1:0;
