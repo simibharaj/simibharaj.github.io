@@ -269,6 +269,9 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
 .subs b{font:400 clamp(56px,6vw,96px)/.85 var(--f-disp);color:var(--pink)}
 .subs span{color:var(--soft);padding-bottom:6px}
 @media (max-width:860px){.wall .wide{grid-column:span 1;display:block}}
+.stamp{font:500 13px/1.4 var(--f-body);color:var(--soft);margin:-30px 0 40px;min-height:1.4em}
+.stamp b{color:var(--ink);font-weight:600}
+.repo small i{font-style:normal;font-weight:500;color:var(--soft)}
 </style>
 </head>
 <body class="armed">
@@ -302,7 +305,7 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
       <div class="cell" data-build><b data-count="10">0</b><span>platforms i've grown them on</span></div>
       <div class="cell" data-build><b data-count="7" data-suffix="+">0</b><span>years in healthcare sales and corporate healthcare</span></div>
       <div class="cell" data-build><b data-count="5">0</b><span>anthropic academy certificates, plus openai certifications</span></div>
-      <a class="cell wide pk" data-build href="#write"><b data-count="210" data-suffix="+">0</b><span>newsletter subscribers across linkedin and substack</span></a>
+      <a class="cell wide pk" data-build href="#write"><b data-count="210" data-suffix="+" data-live="subs">0</b><span>newsletter subscribers across linkedin and substack</span></a>
     </div>
   </section>
 
@@ -316,10 +319,11 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
     </div>
     <div class="wall tally">
       <div class="cell pk" data-build><b data-count="66">0</b><span>custom websites for tampa businesses</span></div>
-      <div class="cell" data-build><b data-count="189">0</b><span>github contributions since sept 2026</span></div>
-      <div class="cell" data-build><b data-count="10">0</b><span>interactive editions and essays published</span></div>
-      <div class="cell" data-build><b data-count="60" data-suffix="+">0</b><span>ai agents and workflows i've built and run</span></div>
+      <div class="cell" data-build><b data-count="189" data-live="contrib">0</b><span>github contributions since sept 2026</span></div>
+      <div class="cell" data-build><b data-count="10" data-live="posts">0</b><span>interactive editions and essays published</span></div>
+      <div class="cell" data-build><b data-count="60" data-suffix="+" data-live="agents">0</b><span>ai agents and workflows i've built and run</span></div>
     </div>
+    <p class="stamp" id="liveStamp" aria-live="polite"></p>
     <div class="kick" data-build style="margin:0 0 6px">the work</div>
     <div class="systems">
       <div class="sysc live" data-build>
@@ -402,7 +406,7 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
       <h2 class="disp" data-build data-type>i write<br><em>every week.</em></h2>
       <div>
         <p data-build>ai, in my opinion. an essay every week about what ai actually does to work and to people, from someone building it.</p>
-        <p class="subs" data-build><b data-count="210" data-suffix="+">0</b><span>subscribers across linkedin and substack</span></p>
+        <p class="subs" data-build><b data-count="210" data-suffix="+" data-live="subs">0</b><span>subscribers across linkedin and substack</span></p>
         <div class="btns" data-build><a class="btn solid" href="https://aiimo.substack.com" target="_blank" rel="noopener">read the newsletter</a><a class="btn" href="https://www.linkedin.com/newsletters/ai-in-my-opinion-7518478320943071232/" target="_blank" rel="noopener">subscribe on linkedin</a></div>
       </div>
     </div>
@@ -415,6 +419,10 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
   <section data-sec="essays">
     <div class="kick" data-build style="margin-bottom:22px">essays</div>
     <div id="essays"></div>
+  </section>
+  <section data-sec="guides" id="guidesSec" hidden>
+    <div class="kick" data-build style="margin-bottom:22px">guides</div>
+    <div id="guides"></div>
   </section>
   <section class="nx" data-sec="next"><a class="next" href="#credentials" data-build>credentials<small>how i work and what i bring →</small></a></section>
 </div>
@@ -475,7 +483,7 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
     <p class="fill">i'm building <input id="b1" aria-label="what you're building" placeholder="an ai agent"> for <input id="b2" aria-label="who it's for" placeholder="our clinics">, and i need it <span class="when" id="when"><button type="button" aria-pressed="true">in six weeks</button> / <button type="button" aria-pressed="false">this quarter</button> / <button type="button" aria-pressed="false">when it's right</button>.</span></p>
     <div class="btns"><a class="btn solid" id="send" href="https://linkedin.com/in/simibharaj" target="_blank" rel="noopener">send it to me on linkedin</a><button class="btn" id="copyBtn" type="button">just copy it</button></div>
     <p class="small" id="out" aria-live="polite">tapping send copies your message. paste it into my linkedin messages and i'll reply myself.</p>
-    <div class="foot"><span>simi bharaj · tampa</span><nav><a href="https://linkedin.com/in/simibharaj" target="_blank" rel="noopener">linkedin</a><a href="https://aiimo.substack.com" target="_blank" rel="noopener">newsletter</a><a href="https://github.com/simibharaj" target="_blank" rel="noopener">github</a><a href="https://instagram.com/_simisim" target="_blank" rel="noopener">instagram</a></nav></div>
+    <div class="foot"><span>simi bharaj · tampa</span><nav><a href="https://linkedin.com/in/simibharaj" target="_blank" rel="noopener">linkedin</a><a href="https://aiimo.substack.com" target="_blank" rel="noopener">newsletter</a><a href="https://github.com/simibharaj" target="_blank" rel="noopener">github</a><a href="https://instagram.com/_simisim" target="_blank" rel="noopener">instagram</a><a href="privacy.html">privacy</a><a href="terms.html">terms</a></nav></div>
   </div>
 </section>
 </div>
@@ -514,6 +522,42 @@ $('essays').innerHTML=ESSAYS.map(function(e){return '<a class="essay" data-build
 $('tools').innerHTML=TOOLS.map(function(t){var ext=t[4];if(ext)return '<a class="tool" data-build href="'+t[0]+'" target="_blank" rel="noopener"><img src="'+t[3]+'" alt="'+t[1]+'" loading="lazy"><b>'+t[1]+'</b><span>'+t[2]+'</span><em>open it on your phone ↗</em></a>';return '<div class="tool" data-build><div class="prev cov lv" data-src="'+t[0]+'" data-vw="900" data-demo="'+t[0]+'" data-title="'+t[1]+'"><img src="'+t[3]+'" alt="'+t[1]+'" loading="lazy"></div><a class="ttx" href="'+t[0]+'" target="_blank" rel="noopener" data-demo="'+t[0]+'" data-title="'+t[1]+'"><b>'+t[1]+'</b><span>'+t[2]+'</span></a><div class="pcap"><span class="lv-on"><b>live</b> · click around</span><span class="lv-off">tap to open it</span><button type="button" class="pfull" data-demo="'+t[0]+'" data-title="'+t[1]+'">full window ↗</button></div></div>';}).join('');
 $('repos').innerHTML=REPOS.map(function(r){return '<a class="repo" data-build href="https://github.com/simibharaj/'+r[0]+'" target="_blank" rel="noopener"><small>'+r[2]+'</small><b>'+r[0]+'</b><span>'+r[1]+'</span><em>code ↗</em></a>';}).join('');
 $('aiCov').src=EDITIONS[0].img;
+
+/* ============ live layer ============
+   data/live.json: refreshed every day by the "live data" GitHub Action (contributions, repo activity, newsletter posts).
+   data/site.json: kept current by Simi's weekly Polar agent (subscriber and agent counts, guides, and posts if the feed is blocked).
+   If either file is missing, the numbers written above stay as they are. */
+var MON=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+function lday(iso){var d=new Date(iso);return MON[d.getMonth()]+' '+d.getDate();}
+function ago(iso){var d=Math.floor((Date.now()-Date.parse(iso))/864e5);return d<=0?'today':d===1?'yesterday':d<30?d+'d ago':Math.floor(d/30)+'mo ago';}
+function setLive(key,n){if(typeof n!=='number'||!isFinite(n))return;
+  document.querySelectorAll('[data-live="'+key+'"]').forEach(function(b){if(n<+b.getAttribute('data-count'))return;b.setAttribute('data-count',n);
+    var host=b.closest('[data-build]');if(host&&host.classList.contains('built'))b.textContent=n.toLocaleString()+(b.getAttribute('data-suffix')||'');});}
+function adopt(el){if(N&&typeof io!=='undefined'&&io)io.observe(el);else build(el);}
+function addTop(box,html){var t=document.createElement('div');t.innerHTML=html;var el=t.firstChild;box.insertBefore(el,box.firstChild);adopt(el);return el;}
+function getJSON(u){return fetch(u+'?h='+Math.floor(Date.now()/36e5),{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;});}
+Promise.all([getJSON('data/live.json'),getJSON('data/site.json')]).then(function(res){var L=res[0],S=res[1];
+  var known={};ESSAYS.forEach(function(e){known[e[2]]=1;});var haveEd={};EDITIONS.forEach(function(e){haveEd[e.n]=1;});var live={};((L&&L.editions_live)||[]).forEach(function(n){live[n]=1;});
+    var posts=[].concat((L&&L.posts)||[],(S&&S.posts)||[]).sort(function(a,b){return (a.date||'')<(b.date||'')?-1:(a.date||'')>(b.date||'')?1:0;});
+    posts.forEach(function(p){if(p.edition){if(haveEd[p.edition])return;haveEd[p.edition]=1;
+        var url=live[p.edition]?EDITION_BASE+p.edition+'/':p.url,img=p.img?(p.img.indexOf('substackcdn.com')>=0?p.img:CDN+encodeURIComponent(p.img)):'';
+        EDITIONS.push({n:p.edition,t:p.title,s:p.sub,img:img,url:url});var i=EDITIONS.length-1;
+        addTop($('eds'),'<a class="sysc ed" data-build'+(live[p.edition]?' data-ed="'+i+'"':'')+' href="'+url+'" target="_blank" rel="noopener"><span class="num">'+p.edition+'</span><div><h3>'+p.title+'</h3><p>'+p.sub+'</p><div class="tags"><i>edition '+p.edition+'</i><i>'+(live[p.edition]?'plays right here':'on substack')+'</i></div></div><div class="pw"><div class="prev cov">'+(img?'<img src="'+img+'" alt="cover of edition '+p.edition+'">':'')+'</div><div class="pcap"><span>interactive edition</span><span class="acts"><em class="pfull">'+(live[p.edition]?'play it here':'read it')+'</em></span></div></div></a>');
+        if(img)$('aiCov').src=img;}
+      else{if(known[p.url])return;known[p.url]=1;ESSAYS.unshift([p.title,p.sub,p.url,p.img]);
+        addTop($('essays'),'<a class="essay" data-build href="'+p.url+'" target="_blank" rel="noopener">'+(p.img?'<img class="ecov" loading="lazy" decoding="async" alt="" src="'+CDN+encodeURIComponent(p.img)+'" data-raw="'+p.img+'" onerror="covFail(this)">':'')+'<span><b>'+p.title+'</b><span>'+p.sub+'</span></span><em>read ↗</em></a>');}});
+    setLive('posts',Math.max((L&&L.post_count)||0,EDITIONS.length+ESSAYS.length));
+  if(L){var g=L.github||{};setLive('contrib',g.contributions);
+    var R=g.repos||{},box=$('repos'),cards=[].slice.call(box.querySelectorAll('.repo'));
+    cards.forEach(function(c){var nm=c.getAttribute('href').split('/').pop(),r=R[nm];c._t=r&&r.pushed?Date.parse(r.pushed):0;
+      if(r&&r.pushed&&Date.now()-c._t<21*864e5){var s=c.querySelector('small');if(s)s.innerHTML+='<i> · updated '+ago(r.pushed)+'</i>';}});
+    cards.sort(function(a,b){return b._t-a._t;}).forEach(function(c){box.appendChild(c);});
+    if(L.updated)$('liveStamp').innerHTML='<b>live</b> · pulled daily from github and substack · last update '+lday(L.updated);}
+  if(S){var c=S.counts||{};Object.keys(c).forEach(function(k){setLive(k,c[k]);});
+    var G=(S.guides||[]).filter(function(x){return x&&x.slug&&x.live;});
+    if(G.length){$('guides').innerHTML=G.map(function(x){return '<a class="essay nocov" data-build href="guides/'+x.slug+'/"><span><b>'+x.title+'</b><span>'+x.sub+'</span></span><em>read ↗</em></a>';}).join('');
+      $('guidesSec').hidden=false;[].forEach.call($('guidesSec').querySelectorAll('[data-build]'),adopt);}}
+});
 /* live previews: load the real page small while it is near the screen, unload it after */
 var LIVE=matchMedia('(hover:hover) and (pointer:fine) and (min-width:901px)'),lvBlk=0;
 function lvReset(p){var f=p.querySelector('iframe');if(!f)return;p.classList.remove('on');p._n=0;f.src=p.getAttribute('data-src');}
