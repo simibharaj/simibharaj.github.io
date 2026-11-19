@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>simi bharaj</title>
+<meta name="description" content="simi bharaj. ui/ux design engineer. ai web optimization and seo. tap to save my contact and see the work.">
+<meta property="og:title" content="simi bharaj">
+<meta property="og:description" content="tap to save my contact and see the work.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#141414;--soft:#5d5a55;--line:rgba(20,20,20,.12);--paper:#ffffff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Inter Tight",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+#water{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.stage{position:relative;z-index:1;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:28px 20px calc(28px + env(safe-area-inset-bottom))}
+.hint{font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--soft);text-transform:uppercase;transition:opacity .4s}
+.scene{width:min(88vw,420px);aspect-ratio:3.5/2;perspective:1200px}
+.card{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+.card.flip .inner{transform:rotateY(180deg)}
+.inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.face{position:absolute;inset:0;border-radius:16px;background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(20,20,20,.28),0 2px 6px rgba(20,20,20,.06);backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:6% 6.5%;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.back{transform:rotateY(180deg)}
+.tag{align-self:flex-start;background:var(--ink);color:#fff;font-size:clamp(8px,2.3vw,10px);font-weight:700;letter-spacing:.1em;padding:4px 7px;border-radius:4px;text-transform:uppercase}
+.name{margin:0;font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(44px,15vw,76px);line-height:.9;letter-spacing:-.01em;text-transform:uppercase}
+.row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.role{font-size:clamp(10px,2.8vw,12.5px);line-height:1.35;text-align:right}
+.mini{font-size:clamp(8px,2.2vw,10px);font-weight:600;letter-spacing:.1em;color:var(--soft);text-transform:uppercase}
+.list{display:grid;grid-template-columns:auto 1fr;column-gap:12px;row-gap:clamp(4px,1.4vw,7px);font-size:clamp(11px,3.2vw,14px);font-weight:600;align-items:center}
+.top{display:flex;justify-content:space-between;align-items:center}
+.top b{font-size:clamp(12px,3.4vw,15px)}
+.actions{width:min(88vw,420px);display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(14px);transition:opacity .7s .25s,transform .7s .25s}
+.ready .actions{opacity:1;transform:none}
+.btn{display:flex;align-items:center;justify-content:center;min-height:54px;padding:0 22px;border-radius:999px;border:1.5px solid var(--ink);background:rgba(255,255,255,.8);color:var(--ink);font:600 17px "Inter Tight",system-ui,sans-serif;text-decoration:none;cursor:pointer;width:100%;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.main{background:var(--ink);color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.socials{display:flex;justify-content:center;gap:22px;margin-top:4px}
+.socials a{color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:2px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:12px 18px;border-radius:999px;opacity:0;transition:.35s;z-index:5;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.inner,.card,.actions{transition:none}}
+[data-pills]{position:relative}
+.pillgl{position:absolute;left:-24px;top:-18px;width:calc(100% + 48px);height:calc(100% + 36px);pointer-events:none;z-index:0}
+.pilled [data-pill]{position:relative;z-index:1;background:none!important;border-color:transparent!important;box-shadow:none!important;transition:transform .06s linear}
+.pilled .btn.main{color:var(--ink)}
+.pilled .socials{position:relative;z-index:1}
+</style>
+</head>
+<body>
+<canvas id="water" aria-hidden="true"></canvas>
+<main class="stage" id="stage">
+  <span class="hint" id="hint">tap the card to flip</span>
+  <div class="scene">
+    <div class="card" id="card" role="button" tabindex="0" aria-label="business card, tap to flip">
+      <div class="inner" id="inner">
+        <section class="face front">
+          <span class="tag">ai web optimization + seo</span>
+          <div class="row">
+            <h1 class="name">Simi<br>Bharaj</h1>
+            <span class="role">ui/ux design<br>engineer.<br><span class="mini">tampa, fl</span></span>
+          </div>
+        </section>
+        <section class="face back">
+          <div class="top"><b>simi bharaj</b><span class="mini">simplifying complex systems</span></div>
+          <div class="list">
+            <span class="mini">call</span><span data-show="tel">tap below</span>
+            <span class="mini">email</span><span data-show="mail">tap below</span>
+            <span class="mini">work</span><span>simibharaj.me</span>
+            <span class="mini">insta</span><span>@_simisim</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="actions" data-pills>
+    <button class="btn main" type="button" id="save" data-pill="white|pink">save my contact</button>
+    <div class="two">
+      <a class="btn" href="#" id="call" data-pill="white|sky">call</a>
+      <a class="btn" href="#" id="mail" data-pill="white|lemon">email</a>
+    </div>
+    <a class="btn" href="https://simibharaj.me" data-pill="white|mint">see the work</a>
+    <div class="socials">
+      <a href="https://instagram.com/_simisim">instagram</a>
+      <a href="https://linkedin.com/in/simibharaj">linkedin</a>
+      <a href="https://aiimo.substack.com">newsletter</a>
+    </div>
+  </div>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+  // contact details are stored scrambled and only assembled after a real tap, so scrapers never read them
+  var d=function(s){return atob(s).split("").reverse().join("")};
+  var P="NDY0Nzc5NzM3NzEr",M="bW9jLmxpYW1nQGphcmFoYi5pbWlz";
+  var $=function(id){return document.getElementById(id)};
+  var stage=$("stage"),card=$("card"),inner=$("inner"),hint=$("hint"),toast=$("toast");
+  var say=function(t){toast.textContent=t;toast.classList.add("on");clearTimeout(say.t);say.t=setTimeout(function(){toast.classList.remove("on")},2200)};
+  var fmt=function(n){return n.replace(/^\+1(\d{3})(\d{3})(\d{4})$/,"$1 $2 $3")};
+  var revealed=false;
+  var reveal=function(){if(revealed)return;revealed=true;
+    document.querySelector('[data-show="tel"]').textContent=fmt(d(P));
+    document.querySelector('[data-show="mail"]').textContent=d(M);};
+
+  setTimeout(function(){stage.classList.add("ready")},500);
+
+  // flip
+  var flip=function(){card.classList.toggle("flip");reveal();hint.style.opacity=0;ripple(innerWidth/2,innerHeight*.42,1.6)};
+  card.addEventListener("click",flip);
+  card.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}});
+
+  // tilt: pointer on desktop, motion on phones
+  var rx=0,ry=0,tx=0,ty=0;
+  var tilt=function(){rx+=(tx-rx)*.08;ry+=(ty-ry)*.08;card.style.transform="rotateX("+rx.toFixed(2)+"deg) rotateY("+ry.toFixed(2)+"deg)";requestAnimationFrame(tilt)};
+  if(!matchMedia("(prefers-reduced-motion: reduce)").matches)tilt();
+  addEventListener("pointermove",function(e){if(e.pointerType!=="mouse")return;
+    tx=(.5-e.clientY/innerHeight)*14;ty=(e.clientX/innerWidth-.5)*18});
+  var motion=function(e){if(e.beta==null)return;tx=Math.max(-12,Math.min(12,(e.beta-45)*.35));ty=Math.max(-16,Math.min(16,e.gamma*.45))};
+  var askMotion=function(){
+    if(window.DeviceOrientationEvent&&typeof DeviceOrientationEvent.requestPermission==="function"){
+      DeviceOrientationEvent.requestPermission().then(function(s){if(s==="granted")addEventListener("deviceorientation",motion)}).catch(function(){});
+    }else addEventListener("deviceorientation",motion);
+    removeEventListener("touchend",askMotion);
+  };
+  addEventListener("touchend",askMotion);
+
+  // actions
+  $("call").addEventListener("click",function(e){e.preventDefault();reveal();location.href="tel:"+d(P)});
+  $("mail").addEventListener("click",function(e){e.preventDefault();reveal();location.href="mailto:"+d(M)});
+  $("save").addEventListener("click",function(){
+    reveal();
+    var v=["BEGIN:VCARD","VERSION:3.0","N:Bharaj;Simi;;;","FN:Simi Bharaj","TITLE:UI/UX Design Engineer · AI Web Optimization + SEO",
+      "TEL;TYPE=CELL:"+d(P),"EMAIL;TYPE=INTERNET:"+d(M),"URL:https://simibharaj.me",
+      "X-SOCIALPROFILE;TYPE=instagram:https://instagram.com/_simisim",
+      "X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/simibharaj","END:VCARD"].join("\r\n");
+    var u=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));
+    var a=document.createElement("a");a.href=u;a.download="simi-bharaj.vcf";
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(u)},4000);
+    say("contact ready to save");
+  });
+
+  // water: light ripples on white that answer every touch
+  var cv=$("water"),cx=cv.getContext("2d"),W,H,dpr,rings=[];
+  var size=function(){dpr=Math.min(devicePixelRatio||1,2);W=cv.width=innerWidth*dpr;H=cv.height=innerHeight*dpr};
+  size();addEventListener("resize",size);
+  var ripple=function(x,y,s){rings.push({x:x*dpr,y:y*dpr,r:0,a:.5,s:s||1})};
+  addEventListener("pointerdown",function(e){ripple(e.clientX,e.clientY,1)});
+  var t0=performance.now(),idle=0;
+  var draw=function(t){
+    cx.clearRect(0,0,W,H);
+    // slow caustic glow
+    var k=(t-t0)/1000;
+    for(var i=0;i<3;i++){
+      var gx=W*(.5+.38*Math.sin(k*.13+i*2.1)),gy=H*(.5+.34*Math.cos(k*.11+i*1.7));
+      var g=cx.createRadialGradient(gx,gy,0,gx,gy,Math.max(W,H)*.45);
+      g.addColorStop(0,"rgba(120,190,235,.10)");g.addColorStop(1,"rgba(120,190,235,0)");
+      cx.fillStyle=g;cx.fillRect(0,0,W,H);
+    }
+    if(t-idle>2600){idle=t;ripple(innerWidth*(.15+Math.random()*.7),innerHeight*(.1+Math.random()*.8),.6)}
+    for(var j=rings.length-1;j>=0;j--){var r=rings[j];
+      r.r+=2.2*dpr*r.s;r.a*=.985;
+      for(var n=0;n<3;n++){var rr=r.r-n*14*dpr;if(rr<=0)continue;
+        cx.beginPath();cx.arc(r.x,r.y,rr,0,Math.PI*2);
+        cx.strokeStyle="rgba(70,150,210,"+(r.a*(1-n*.3)).toFixed(3)+")";cx.lineWidth=1.2*dpr;cx.stroke();}
+      if(r.a<.01)rings.splice(j,1);
+    }
+    requestAnimationFrame(draw);
+  };
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){draw(t0);}else requestAnimationFrame(draw);
+})();
+</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="../pill.js"></script>
+</body>
+</html>
