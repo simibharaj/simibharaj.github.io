@@ -14,6 +14,7 @@ import html
 import json
 import os
 import re
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
@@ -72,13 +73,46 @@ def repos():
     return out
 
 
+def post_item(title, sub, link, iso, img):
+    title = html.unescape((title or "").strip())
+    m = re.match(r"edition\s+(\d+)\s*:\s*(.*)", title, re.I)
+    return {
+        "title": m.group(2).strip() if m else title,
+        "sub": html.unescape((sub or "").strip()),
+        "url": (link or "").strip(),
+        "date": iso,
+        "img": img or "",
+        "edition": m.group(1).zfill(2) if m else None,
+    }
+
+
 def posts():
+    try:
+        return posts_direct()
+    except Exception:
+        # Cloudflare blocks GitHub's servers from the feed, so fall back to a public RSS relay
+        return posts_relay()
+
+
+def posts_relay():
+    url = "https://api.rss2json.com/v1/api.json?rss_url=" + urllib.parse.quote(FEED, safe="")
+    d = json.loads(get(url))
+    if d.get("status") != "ok":
+        raise ValueError("relay: " + str(d.get("message")))
+    items = []
+    for it in d.get("items", []):
+        enc = it.get("enclosure") or {}
+        img = enc.get("link", "") if str(enc.get("type", "image")).startswith("image") else ""
+        items.append(post_item(it.get("title"), it.get("description"), it.get("link"), (it.get("pubDate") or "")[:10], img))
+    if not items:
+        raise ValueError("relay returned no posts")
+    return items
+
+
+def posts_direct():
     root = ET.fromstring(get(FEED).encode("utf-8"))
     items = []
     for it in root.find("channel").findall("item"):
-        title = html.unescape((it.findtext("title") or "").strip())
-        sub = html.unescape((it.findtext("description") or "").strip())
-        link = (it.findtext("link") or "").strip()
         date = it.findtext("pubDate") or ""
         try:
             iso = dt.datetime.strptime(date[:25], "%a, %d %b %Y %H:%M:%S").strftime("%Y-%m-%d")
@@ -86,15 +120,7 @@ def posts():
             iso = ""
         enc = it.find("enclosure")
         img = enc.get("url") if enc is not None and (enc.get("type") or "").startswith("image") else ""
-        m = re.match(r"edition\s+(\d+)\s*:\s*(.*)", title, re.I)
-        items.append({
-            "title": m.group(2).strip() if m else title,
-            "sub": sub,
-            "url": link,
-            "date": iso,
-            "img": img,
-            "edition": m.group(1).zfill(2) if m else None,
-        })
+        items.append(post_item(it.findtext("title"), it.findtext("description"), it.findtext("link"), iso, img))
     return items
 
 
