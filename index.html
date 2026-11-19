@@ -272,6 +272,32 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
 .stamp{font:500 13px/1.4 var(--f-body);color:var(--soft);margin:-30px 0 40px;min-height:1.4em}
 .stamp b{color:var(--ink);font-weight:600}
 .repo small i{font-style:normal;font-weight:500;color:var(--soft)}
+
+/* newsletter carousel */
+#eds{display:none}
+.edhead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px}
+.edctl{display:flex;gap:8px}
+.edctl button{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:2px;padding:9px 14px;font:600 14px/1 var(--f-body);cursor:pointer}
+.edctl button:hover{background:var(--ink);color:#fff}
+.edcar{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 14px;scrollbar-width:thin;scrollbar-color:var(--ink) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.edc{flex:0 0 clamp(230px,26vw,320px);scroll-snap-align:start;text-decoration:none;display:grid;gap:10px;align-content:start;color:var(--ink)}
+.edc.new{flex-basis:clamp(270px,36vw,460px)}
+.edc .cv{position:relative;aspect-ratio:900/562;border:1.5px solid var(--ink);border-radius:2px;background:#e8dde2;overflow:hidden}
+.edc .cv img{width:100%;height:100%;object-fit:cover;display:block}
+.edc .tag{position:absolute;left:0;top:0;background:var(--ink);color:#fff;font:600 12px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;padding:7px 9px}
+.edc .ln{display:flex;gap:12px;align-items:flex-start}
+.edc .n{font:400 44px/.85 var(--f-disp);color:var(--pink)}
+.edc b{display:block;font:600 clamp(16px,1.5vw,20px)/1.2 var(--f-body);letter-spacing:-.01em}
+.edc small{display:block;margin-top:4px;color:var(--soft);font-size:14px;line-height:1.35}
+.edc:hover b{text-decoration:underline}
+.hero{gap:20px;padding-top:88px}
+.hero .disp{font-size:clamp(56px,10.5vw,160px)}
+.hero .edc{flex-basis:clamp(180px,17vw,220px)}
+.hero .edc.new{flex-basis:clamp(230px,24vw,300px)}
+.hero .edc small{display:none}
+.hero .edc .n{font-size:34px}
+@media (max-width:640px){.edc,.edc.new,.hero .edc,.hero .edc.new{flex-basis:74vw}.hero .edc small{display:block}}
+@media (prefers-reduced-motion:reduce){.edcar{scroll-behavior:auto}}
 </style>
 </head>
 <body class="armed">
@@ -290,8 +316,9 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
     <h1 class="disp" data-build data-type>simi<br>bharaj</h1>
     <div class="sub">
       <p data-build>software engineer. ai design &amp; development. simplifying complex systems.</p>
-      <div class="btns" data-build><a class="btn solid" href="#hire">work with me</a><a class="btn" href="#build">see the work</a></div>
+      <div class="btns" data-build><a class="btn solid" href="#latest" id="playLatest">play this week's edition</a><a class="btn" href="#hire">work with me</a><a class="btn" href="#build">see the work</a></div>
     </div>
+  <div class="edwrap"><div class="edhead"><div class="kick">newsletter · play an edition</div><div class="edctl"><button type="button" data-carprev>back</button><button type="button" data-carnext>next</button></div></div><div class="edcar" data-car></div></div>
   </section>
 
   <section data-sec="proof">
@@ -414,6 +441,7 @@ a.sysc:hover .prev,.tool:hover .prev{border-color:var(--pink)}
 
   <section data-sec="editions">
     <div class="kick" data-build style="margin-bottom:22px">03 · play an edition</div>
+    <div class="edwrap"><div class="edhead"><span></span><div class="edctl"><button type="button" data-carprev>back</button><button type="button" data-carnext>next</button></div></div><div class="edcar" data-car></div></div>
     <div class="systems" id="eds"></div>
   </section>
   <section data-sec="essays">
@@ -682,6 +710,24 @@ function stop(){player.hidden=true;$('pF').src='about:blank';$('pI').removeAttri
 document.addEventListener('click',function(e){var a=e.target.closest('[data-demo],[data-img]');if(!a||e.metaKey||e.ctrlKey||e.shiftKey)return;e.preventDefault();var im=a.hasAttribute('data-img');openP(a.getAttribute('data-title')||'',a.getAttribute(im?'data-img':'data-demo'),im);});
 $('eds').addEventListener('click',function(e){var a=e.target.closest('[data-ed]');if(!a||e.metaKey||e.ctrlKey)return;e.preventDefault();play(+a.getAttribute('data-ed'));});
 $('pX').addEventListener('click',stop);
+/* newsletter carousel + this week's edition link */
+function edList(){return EDITIONS.map(function(e,i){return {e:e,i:i};}).sort(function(a,b){return (+b.e.n)-(+a.e.n);});}
+function edHref(e){return e.url||EDITION_BASE+e.n+'/';}
+function edPlays(e){return !e.url||e.url.indexOf(EDITION_BASE)===0;}
+function renderCar(){var L=edList();document.querySelectorAll('[data-car]').forEach(function(box){box.innerHTML=L.map(function(o,k){var e=o.e;return '<a class="edc'+(k===0?' new':'')+'" href="'+edHref(e)+'" target="_blank" rel="noopener"'+(edPlays(e)?' data-edc="'+o.i+'"':'')+'><div class="cv">'+(e.img?'<img src="'+e.img+'" alt="cover of edition '+e.n+'" loading="lazy">':'')+(k===0?'<span class="tag">this week</span>':'')+'</div><div class="ln"><span class="n">'+e.n+'</span><span><b>'+e.t+'</b><small>'+e.s+'</small></span></div></a>';}).join('');});}
+function playLatest(){var o=edList()[0];if(edPlays(o.e))play(o.i);else location.href=edHref(o.e);}
+renderCar();
+new MutationObserver(renderCar).observe($('eds'),{childList:true});
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest('[data-edc]');
+  if(a&&!ev.metaKey&&!ev.ctrlKey&&!ev.shiftKey){ev.preventDefault();play(+a.getAttribute('data-edc'));return;}
+  var p=ev.target.closest('#playLatest');if(p){ev.preventDefault();playLatest();return;}
+  var c=ev.target.closest('[data-carnext],[data-carprev]');
+  if(c){var car=c.closest('.edwrap').querySelector('.edcar');car.scrollBy({left:(c.hasAttribute('data-carnext')?1:-1)*car.clientWidth*.85,behavior:'smooth'});}
+});
+if(location.hash==='#latest'){history.replaceState(null,'',location.pathname+location.search+'#home');playLatest();}
+addEventListener('hashchange',function(){if(location.hash==='#latest'){history.replaceState(null,'',location.pathname+location.search+'#home');playLatest();}});
+
 addEventListener('keydown',function(e){if(e.key==='Escape'&&!player.hidden)stop();});
 document.addEventListener('securitypolicyviolation',function(e){if(!/frame/.test(e.violatedDirective||''))return;if(!player.hidden){$('pB').hidden=false;return;}lvBlk=Date.now();document.querySelectorAll('.prev.lv').forEach(function(p){if(p._n>1&&Date.now()-p._t<1500){lvBlk=0;lvReset(p);}});});
 })();
