@@ -93,6 +93,10 @@ h2.disp{font-size:clamp(52px,9.5vw,150px)}
 .hero{min-height:100svh;display:grid;align-content:center;gap:28px;padding-top:110px}
 .hero .sub{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:end;justify-content:space-between}
 .hero .sub p{margin:0;font-size:clamp(18px,1.8vw,24px);max-width:30ch;line-height:1.35}
+.roles{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;font-size:clamp(18px,1.7vw,23px);line-height:1.15}
+.roles li{padding:0 clamp(14px,1.7vw,24px);border-left:2px solid var(--pink)}
+.roles li:first-child{padding-left:0;border-left:0}
+@media (max-width:640px){.roles{flex-direction:column;align-items:flex-start}.roles li{padding:9px 0;border-left:0;border-top:1px solid var(--line);width:100%}.roles li:first-child{border-top:0;padding-top:0}}
 .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--ink);border-left:1px solid var(--line);margin-top:10px}
 .tiles>a{padding:18px 18px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none}
 .tiles b{display:block;font:400 clamp(44px,5vw,80px)/.9 var(--f-disp)}
@@ -396,7 +400,7 @@ body.agent #swarm,body.agent .hud{display:none}
     <div class="kick" data-build><b>live</b> agents build each page as you open it</div>
     <h1 class="disp" data-build data-type>simi<br>bharaj</h1>
     <div class="sub">
-      <p data-build>ui/ux design engineer. ai design &amp; development. simplifying complex systems.</p>
+      <ul class="roles" data-build><li>ui/ux design engineer</li><li>ai design &amp; development</li><li>simplifying complex systems</li></ul>
       <div class="btns" data-build><a class="btn solid" href="#hire">work with me</a><a class="btn" href="#build">see the work</a></div>
     </div>
     <div class="tiles" data-build>
