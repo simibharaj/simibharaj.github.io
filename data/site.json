@@ -1,5 +1,16 @@
 {
- "_note": "Kept current by Simi's weekly Polar agent. counts override numbers on the site (only ever upward). guides show on the write page once live is true.",
- "counts": {},
+ "_note": "Kept current by Simi's weekly Polar agent, or edit by hand. Every number on the site with the same name updates from here (only ever upward). contrib and posts update daily from data/live.json. guides show on the write page once live is true.",
+ "counts": {
+  "builds": 90,
+  "hours": 1000,
+  "prompts": 24000,
+  "sites": 66,
+  "agents": 60,
+  "subs": 210,
+  "businesses": 9,
+  "brands": 15,
+  "platforms": 10,
+  "years": 7
+ },
  "guides": []
 }

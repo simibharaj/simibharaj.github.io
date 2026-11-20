@@ -313,8 +313,9 @@ a.mrow:hover h4{color:var(--pink)}
 /* ---------- credentials page ---------- */
 .loop{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
 .loop h2{margin-top:18px}
-.loop .copy{display:grid;gap:18px;font-size:clamp(17px,1.4vw,20px);padding-top:clamp(0px,4vw,52px)}
+.loop .copy{display:grid;gap:18px;font-size:clamp(17px,1.4vw,20px)}
 .loop .copy p{margin:0}
+.belief{margin:0;font:500 clamp(28px,3vw,44px)/1.15 var(--f-body);letter-spacing:-.025em}
 .loop blockquote{margin:6px 0 0;padding:18px 20px;border-left:4px solid var(--pink);background:var(--tint);font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.35}
 @media (max-width:860px){.loop{grid-template-columns:1fr}}
 .creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px}
@@ -404,8 +405,8 @@ body.agent #swarm,body.agent .hud{display:none}
       <div class="btns" data-build><a class="btn solid" href="#hire">work with me</a><a class="btn" href="#build">see the work</a></div>
     </div>
     <div class="tiles" data-build>
-      <a href="#build"><b data-count="90" data-suffix="+">0</b><span>builds shipped →</span></a>
-      <a href="#credentials"><b data-count="1000" data-suffix="+">0</b><span>hours building with ai →</span></a>
+      <a href="#build"><b data-live="builds" data-count="90" data-suffix="+">0</b><span>builds shipped →</span></a>
+      <a href="#credentials"><b data-live="hours" data-count="1000" data-suffix="+">0</b><span>hours building with ai →</span></a>
       <a href="#write"><b data-count="210" data-suffix="+" data-live="subs">0</b><span>newsletter readers →</span></a>
     </div>
   </section>
@@ -447,7 +448,7 @@ body.agent #swarm,body.agent .hud{display:none}
       </div>
     </div>
     <div class="wall">
-      <div class="pk" data-build><b data-count="66">0</b><span>custom websites for tampa businesses</span></div>
+      <div class="pk" data-build><b data-live="sites" data-count="66">0</b><span>custom websites for tampa businesses</span></div>
       <div data-build><b data-count="60" data-suffix="+" data-live="agents">0</b><span>ai agents and workflows i've built and run</span></div>
       <div data-build><b data-count="189" data-live="contrib">0</b><span>github contributions since sept 2026</span></div>
       <div data-build><b data-count="10" data-live="posts">0</b><span>interactive editions and essays published</span></div>
@@ -502,38 +503,9 @@ body.agent #swarm,body.agent .hud{display:none}
 
 <!-- ================= CREDENTIALS ================= -->
 <div data-page="credentials" hidden>
-  <section data-sec="how i work" style="padding-top:140px">
-    <div class="loop">
-      <div>
-        <div class="kick" data-build>/credentials · about me</div>
-        <h2 class="disp" data-build data-type>credentials.</h2>
-      </div>
-      <div class="copy">
-        <p data-build>i grew up in hospitals, and worked as a hospital pharmacy tech compounding sterile iv meds.</p>
-        <p data-build>then i spent seven years in healthcare sales, across software, pharma and ai-enabled medical devices. i was always the one training the team on the new tech. now i build the agents.</p>
-        <p data-build>building them has shown me the difference between what ai can do and what it only pretends to do, and how much human judgment goes unnoticed until you try to reproduce it.</p>
-        <blockquote data-build>aristotle called it eudaimonia, human flourishing. i'm fascinated by what people can achieve when they get their time back. that's why i design agents: to give everyone their real life back.</blockquote>
-      </div>
-    </div>
-  </section>
-  <section data-sec="proof">
-    <div class="kick" data-build style="margin-bottom:22px">proof</div>
-    <div class="wall">
-      <div class="big" data-build><b data-count="1000" data-suffix="+">0</b><span>hours building with ai</span></div>
-      <div class="big" data-build><b data-count="24000" data-suffix="+">0</b><span>prompts written and tested</span></div>
-      <div class="wide pk" data-build><b data-count="40000" data-suffix="+">0</b><span>instagram visits off my reels</span></div>
-      <div data-build><b data-count="90" data-suffix="+">0</b><span>builds shipped</span></div>
-      <div data-build><b data-count="66">0</b><span>custom websites for tampa businesses</span></div>
-      <div data-build><b data-count="60" data-suffix="+" data-live="agents">0</b><span>ai agents and workflows built and run</span></div>
-      <div data-build><b data-count="210" data-suffix="+" data-live="subs">0</b><span>newsletter subscribers</span></div>
-      <div data-build><b data-count="9">0</b><span>businesses started from scratch</span></div>
-      <div data-build><b data-count="15">0</b><span>brands i grew engagement for</span></div>
-      <div data-build><b data-count="10">0</b><span>platforms i've grown them on</span></div>
-      <div data-build><b data-count="7" data-suffix="+">0</b><span>years in healthcare sales</span></div>
-    </div>
-  </section>
-  <section data-sec="credentials">
-    <div class="kick" data-build>education and certificates</div>
+  <section data-sec="credentials" style="padding-top:140px">
+    <div class="kick" data-build>/credentials</div>
+    <h2 class="disp" data-build data-type style="margin-top:18px">credentials.</h2>
     <div class="creds">
       <div class="cred" data-build><b>b.sc. anatomy &amp; cell biology</b><span>mcgill university · published hiv research</span></div>
       <div class="cred" data-build><b>computer science coursework</b><span>python and java</span></div>
@@ -545,7 +517,33 @@ body.agent #swarm,body.agent .hud{display:none}
       <div class="cred" data-build><b>openai certifications</b><span>openai</span></div>
       <div class="cred" data-build><b>acls · bls</b><span>clinical training</span></div>
     </div>
-    <div class="btns" data-build style="margin-top:34px"><a class="btn solid" href="#hire">hire me →</a></div>
+  </section>
+  <section data-sec="proof">
+    <div class="kick" data-build style="margin-bottom:22px">the numbers</div>
+    <div class="wall">
+      <div class="big" data-build><b data-live="hours" data-count="1000" data-suffix="+">0</b><span>hours building with ai</span></div>
+      <div class="big" data-build><b data-live="prompts" data-count="24000" data-suffix="+">0</b><span>prompts written and tested</span></div>
+      <div data-build><b data-live="builds" data-count="90" data-suffix="+">0</b><span>builds shipped</span></div>
+      <div data-build><b data-live="sites" data-count="66">0</b><span>custom websites for tampa businesses</span></div>
+      <div data-build><b data-count="60" data-suffix="+" data-live="agents">0</b><span>ai agents and workflows built and run</span></div>
+      <div data-build><b data-count="210" data-suffix="+" data-live="subs">0</b><span>newsletter subscribers</span></div>
+      <div data-build><b data-live="businesses" data-count="9">0</b><span>businesses started from scratch</span></div>
+      <div data-build><b data-live="brands" data-count="15">0</b><span>brands i grew engagement for</span></div>
+      <div data-build><b data-live="platforms" data-count="10">0</b><span>platforms i've grown them on</span></div>
+      <div data-build><b data-live="years" data-count="7" data-suffix="+">0</b><span>years in healthcare sales</span></div>
+    </div>
+  </section>
+  <section data-sec="about me">
+    <div class="kick" data-build style="margin-bottom:26px">about me</div>
+    <div class="loop">
+      <p class="belief" data-build>i like the idea of giving people their time back. i'm fascinated by what humans can achieve when they're not bogged down by repetitive tasks. that's why agentifying everything is so exciting.</p>
+      <div class="copy">
+        <p data-build>i grew up in hospitals, and worked as a hospital pharmacy tech compounding sterile iv meds.</p>
+        <p data-build>then i spent seven years in healthcare sales, across software, pharma and ai-enabled medical devices. i was always the one training the team on the new tech. now i build the agents.</p>
+        <p data-build>building them has shown me the difference between what ai can do and what it only pretends to do, and how much human judgment goes unnoticed until you try to reproduce it.</p>
+      </div>
+    </div>
+    <div class="btns" data-build style="margin-top:44px"><a class="btn solid" href="#hire">hire me →</a></div>
   </section>
 </div>
 
@@ -803,7 +801,7 @@ function dispatch(el){if(el.classList.contains('built')||busy.has(el))return;var
 function end(job,forced){if(!busy.has(job.el))return;busy.delete(job.el);build(job.el);job.f.querySelector('b').textContent='✓ shipped';
   setTimeout(function(){job.f.classList.add('out');},forced?0:450);setTimeout(function(){job.f.remove();},1000);
   release(job);}
-function release(job){job.team.forEach(function(a){a.job=null;a.out=true;var p=edgePt();a.tx=p[0];a.ty=p[1];});jobs.splice(jobs.indexOf(job),1);hud();}
+function release(job){var now=performance.now();job.team.forEach(function(a){a.job=null;a.out=true;a.side=Math.random()*4|0;a.frac=Math.random();a.outT=now;});jobs.splice(jobs.indexOf(job),1);hud();}
 function cancelAll(){q.length=0;jobs.slice().forEach(function(job){busy.delete(job.el);job.f.remove();release(job);});}
 function stepJob(job,t){var R=job.R,L=job.lead;
   if(job.phase===0){if(Math.hypot(L.x-R.x,L.y-R.y)<14){job.phase=1;job.t0=t;}}
@@ -822,13 +820,16 @@ if(N){
   var last=0;
   function tick(t){var dt=Math.min(50,t-(last||t))/16.7;last=t;cx.clearRect(0,0,W,H);var sy=scrollY,sx=scrollX;
     for(var j=jobs.length-1;j>=0;j--)stepJob(jobs[j],t);
-    for(var i=A.length-1;i>=0;i--){var a=A[i];
+    for(var i=A.length-1;i>=0;i--){var a=A[i],al=1;
+      if(a.out){var age=t-a.outT;if(age>1500){A.splice(i,1);continue;}al=age<600?1:1-(age-600)/900;
+        /* the exit point follows the current scroll, so nobody parks mid-page */
+        a.tx=a.side===0?sx+a.frac*W:a.side===1?sx+W+40:a.side===2?sx+a.frac*W:sx-40;a.ty=a.side===0?sy-40:a.side===2?sy+H+40:sy+a.frac*H;}
       var k=a.job?.02:.012;a.vx=(a.vx+(a.tx-a.x)*k*dt)*.88;a.vy=(a.vy+(a.ty-a.y)*k*dt)*.88;
       var sp=Math.hypot(a.vx,a.vy),mxs=16;if(sp>mxs){a.vx*=mxs/sp;a.vy*=mxs/sp;}
       a.x+=a.vx*dt;a.y+=a.vy*dt;var x=a.x-sx,y=a.y-sy;
       if(a.out&&(x<-20||x>W+20||y<-20||y>H+20)){A.splice(i,1);continue;}
       if(y<-40||y>H+40)continue;
-      cx.save();cx.translate(x,y);cx.fillStyle=a.c;cx.strokeStyle='#fff';cx.lineWidth=1.2;
+      cx.save();cx.globalAlpha=al;cx.translate(x,y);cx.fillStyle=a.c;cx.strokeStyle='#fff';cx.lineWidth=1.2;
       cx.beginPath();cx.moveTo(0,0);cx.lineTo(0,12);cx.lineTo(3.4,9);cx.lineTo(6,14.5);cx.lineTo(8,13.6);cx.lineTo(5.4,8.2);cx.lineTo(9.5,8.2);cx.closePath();cx.fill();cx.stroke();
       cx.restore();}
     if(A.length||jobs.length)requestAnimationFrame(tick);else{running=false;last=0;cx.clearRect(0,0,W,H);}}
