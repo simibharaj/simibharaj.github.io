@@ -1,0 +1,169 @@
+{
+  "owner": "simi bharaj",
+  "total_shipped": "90+",
+  "builds": [
+    {
+      "rank": 1,
+      "title": "bella",
+      "what": "a healthcare outreach agent built from doing the job and training people to do it. she calls, follows up and books the demo.",
+      "url": "https://gethealthcarebdr.com/",
+      "tags": [
+        "voice agent",
+        "email sequences",
+        "healthcare"
+      ],
+      "role": "2026 · solo build"
+    },
+    {
+      "rank": 2,
+      "title": "one patient",
+      "what": "microsoft says its ai out-diagnoses doctors, so i ran their benchmark myself on gpt-5 and built a 3d body map of one case. tap an organ to see what the ai ordered and what it missed.",
+      "url": "https://simibharaj.me/one-patient/",
+      "tags": [
+        "python",
+        "sdbench",
+        "three.js",
+        "healthcare ai"
+      ],
+      "role": "2026 · solo build"
+    },
+    {
+      "rank": 3,
+      "title": "alien vs printer",
+      "what": "the brand, the website and the sales side of a 3d print company i hold equity in.",
+      "url": "https://alienvsprinter.com/",
+      "tags": [
+        "brand",
+        "e-commerce",
+        "3d printing"
+      ],
+      "role": "co-owner · brand, site and sales"
+    },
+    {
+      "rank": 4,
+      "title": "66 local business sites",
+      "what": "custom websites for tampa businesses, each one tuned for design, seo and ai search.",
+      "url": null,
+      "tags": [
+        "web design",
+        "seo",
+        "ai search"
+      ],
+      "role": "2026 · web design + seo"
+    },
+    {
+      "rank": 5,
+      "title": "imaging scout",
+      "what": "a parts-sourcing agent for my dad's medical imaging business. it finds the part, gets the quotes and flags what needs a human yes.",
+      "url": "https://ecotechmed.com",
+      "tags": [
+        "sourcing agent",
+        "medical imaging"
+      ],
+      "role": "2026 · built with my dad"
+    },
+    {
+      "rank": 6,
+      "title": "ai, in my opinion",
+      "what": "a weekly essay, plus a newsletter you can play. each edition is its own interactive build.",
+      "url": null,
+      "tags": [
+        "interactive editions",
+        "writing"
+      ],
+      "role": "weekly · writer and builder"
+    },
+    {
+      "rank": 7,
+      "title": "the rep dashboard",
+      "what": "a dashboard i designed at pfizer so reps could measure their own performance. it drove adoption of an ai targeting tool across the us branded field force.",
+      "url": null,
+      "tags": []
+    },
+    {
+      "rank": 8,
+      "title": "tap cards tampa",
+      "what": "tap-to-review nfc cards. i priced it, ran the launch research, ranked the prospects and designed the print set.",
+      "url": "https://tapcardstampa.com/",
+      "tags": []
+    },
+    {
+      "rank": 9,
+      "title": "training wheels",
+      "what": "a next-sentence copilot for insurance calls, built from 35 transcripts of my own training.",
+      "url": "https://simibharaj.me/work/training-wheels.webp",
+      "tags": []
+    },
+    {
+      "rank": 10,
+      "title": "the revenue desk",
+      "what": "the crm i built for my nfc business. prospects, campaigns and the daily report in one app.",
+      "url": "https://simibharaj.me/work/revenue-desk.webp",
+      "tags": []
+    },
+    {
+      "rank": 11,
+      "title": "the usage archive",
+      "what": "every prompt and hour i've put into ai since june 2025, turned into a dashboard.",
+      "url": "https://simibharaj.me/ai-usage-archive/dashboard/",
+      "tags": []
+    },
+    {
+      "rank": 12,
+      "title": "retirement income calculator",
+      "what": "a calculator i coded myself that shows where retirement income actually comes from.",
+      "url": "https://simibharaj.me/retirement-income-calculator/",
+      "tags": []
+    },
+    {
+      "rank": 13,
+      "title": "audits & market research",
+      "what": "website and seo audits for tampa businesses, plus market research built from county records.",
+      "url": null,
+      "tags": []
+    }
+  ],
+  "tools": [
+    {
+      "title": "snake draft copilot",
+      "what": "a one-page fantasy football draft helper: who to take and who can wait.",
+      "url": "https://simibharaj.me/snake-draft-copilot/"
+    },
+    {
+      "title": "intake quiz",
+      "what": "a multi-step intake quiz with a progress bar and tested logic.",
+      "url": "https://simibharaj.me/dynamic-intake-quiz/"
+    },
+    {
+      "title": "accountability gate",
+      "what": "an early prototype for user-approved ai budgets and permissions.",
+      "url": "https://simibharaj.me/ai-accountability-gate/"
+    }
+  ],
+  "repos": [
+    {
+      "name": "healthcare-bdr-agent",
+      "what": "voice plus an email sequence engine for healthcare outreach.",
+      "language": "JavaScript",
+      "url": "https://github.com/simibharaj/healthcare-bdr-agent"
+    },
+    {
+      "name": "lead-pipeline-orchestrator",
+      "what": "normalizes and scores messy inbound leads into clean crm records.",
+      "language": "TypeScript",
+      "url": "https://github.com/simibharaj/lead-pipeline-orchestrator"
+    },
+    {
+      "name": "agent-structured-output-validator",
+      "what": "checks model output against a schema and re-prompts with the errors.",
+      "language": "Python",
+      "url": "https://github.com/simibharaj/agent-structured-output-validator"
+    },
+    {
+      "name": "parametric-3d-cad-library",
+      "what": "parametric models as code, with printability checks.",
+      "language": "Python",
+      "url": "https://github.com/simibharaj/parametric-3d-cad-library"
+    }
+  ]
+}

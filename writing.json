@@ -1,0 +1,68 @@
+{
+  "publication": "ai, in my opinion",
+  "url": "https://aiimo.substack.com",
+  "editions": [
+    {
+      "number": "05",
+      "title": "game theory",
+      "what": "six rounds of the prisoner's dilemma against a program from 1980. can you work out its rule?",
+      "url": "https://simibharaj.github.io/aiimo/05/"
+    },
+    {
+      "number": "04",
+      "title": "one chip, one week",
+      "what": "america voted on ai last tuesday. scroll through what happened next.",
+      "url": "https://simibharaj.github.io/aiimo/04/"
+    },
+    {
+      "number": "03",
+      "title": "in china, the ai bubble has already burst",
+      "what": "a 4 minute flight through what fell, plus a skill that holds up either way.",
+      "url": "https://simibharaj.github.io/aiimo/03/"
+    },
+    {
+      "number": "02",
+      "title": "microsoft says its ai out-diagnoses doctors",
+      "what": "i ran the test myself. then i made it a train ride.",
+      "url": "https://simibharaj.github.io/aiimo/02/"
+    },
+    {
+      "number": "01",
+      "title": "order exactly what you want",
+      "what": "six bites. one skill you'll actually use.",
+      "url": "https://simibharaj.github.io/aiimo/01/"
+    }
+  ],
+  "essays": [
+    {
+      "title": "everyone’s scared ai will end humanity. what if it’s what keeps us alive?",
+      "subtitle": "who do you trust more with your health: a doctor or a machine?",
+      "url": "https://aiimo.substack.com/p/will-ai-end-or-save-humanity"
+    },
+    {
+      "title": "my first shipped ai product",
+      "subtitle": "meet bella, my healthcare bdr",
+      "url": "https://aiimo.substack.com/p/my-first-shipped-ai-product"
+    },
+    {
+      "title": "if you’ve never done the job, your agent is just adding to the slop",
+      "subtitle": "i built a healthcare bdr. i was one first.",
+      "url": "https://aiimo.substack.com/p/if-youve-never-done-the-job-your"
+    },
+    {
+      "title": "i trained a human. then i wrote the playbook for an ai.",
+      "subtitle": "prompt engineering is just onboarding with worse documentation.",
+      "url": "https://aiimo.substack.com/p/i-trained-a-human-then-i-wrote-the"
+    },
+    {
+      "title": "the deployment gap",
+      "subtitle": "sales was deployment the whole time",
+      "url": "https://aiimo.substack.com/p/the-deployment-gap"
+    },
+    {
+      "title": "apparently, i’m tokenmaxxing",
+      "subtitle": "i hit an ai usage limit in the middle of a build.",
+      "url": "https://aiimo.substack.com/p/apparently-im-tokenmaxxing"
+    }
+  ]
+}
