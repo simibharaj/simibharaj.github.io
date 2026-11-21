@@ -1,6 +1,6 @@
 {
  "github": {
-  "contributions": 278,
+  "contributions": 282,
   "since": "2026-09-01",
   "repos": {
    "agent-structured-output-validator": {
@@ -60,7 +60,7 @@
     "lang": null
    },
    "simibharaj.github.io": {
-    "pushed": "2026-11-20T17:21:09Z",
+    "pushed": "2026-11-21T02:07:13Z",
     "lang": "HTML"
    },
    "snake-draft-copilot": {
@@ -81,9 +81,17 @@
   "04",
   "05"
  ],
- "updated": "2026-11-20T18:36:46Z",
+ "updated": "2026-11-21T17:29:30Z",
  "problems": [],
  "posts": [
+  {
+   "title": "game theory",
+   "sub": "hint: tit for tat",
+   "url": "https://aiimo.substack.com/p/edition-05-game-theory",
+   "date": "2026-11-19",
+   "img": "https://substackcdn.com/image/fetch/$s_!tDKx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F308148e2-4d48-433a-ab5b-a5c68ccdfcef_1200x630.jpeg",
+   "edition": "05"
+  },
   {
    "title": "one chip, one week",
    "sub": "america voted on ai last tuesday. scroll through what happened next.",
@@ -165,5 +173,5 @@
    "edition": null
   }
  ],
- "post_count": 10
+ "post_count": 11
 }
