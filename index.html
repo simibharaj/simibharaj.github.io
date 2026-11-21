@@ -315,7 +315,16 @@ a.mrow:hover h4{color:var(--pink)}
 .loop h2{margin-top:18px}
 .loop .copy{display:grid;gap:18px;font-size:clamp(17px,1.4vw,20px)}
 .loop .copy p{margin:0}
-.belief{margin:0;font:500 clamp(28px,3vw,44px)/1.15 var(--f-body);letter-spacing:-.025em}
+.belief{margin:0;font:500 clamp(32px,3.6vw,54px)/1.08 var(--f-body);letter-spacing:-.03em}
+.belief em{font-style:normal;color:var(--pink)}
+.me{display:grid;gap:22px;align-content:start}
+.me .lede{max-width:46ch;color:var(--soft)}
+.purpose{display:grid;gap:12px;padding-top:22px;border-top:1.5px solid var(--ink);max-width:52ch}
+.purpose p{margin:0;font-size:clamp(18px,1.6vw,22px);line-height:1.45}
+.jobs{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.jobs li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.jobs b{font-weight:600;font-size:clamp(17px,1.4vw,20px)}
+.jobs span{color:var(--soft);font-size:15px;text-align:right}
 .loop blockquote{margin:6px 0 0;padding:18px 20px;border-left:4px solid var(--pink);background:var(--tint);font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.35}
 @media (max-width:860px){.loop{grid-template-columns:1fr}}
 .creds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px}
@@ -418,7 +427,6 @@ body.agent #swarm,body.agent .hud{display:none}
 
   <section data-sec="what i do">
     <div class="kick" data-build>02 · what i do</div>
-    <p class="lede" data-build style="margin-top:22px">i've spent my whole life inside healthcare, from the hospital floor to the field. now i build the agents, the sites and the dashboards that make complicated things easy to use.</p>
     <div class="doors">
       <a class="door" href="#build" data-build><div class="kick">/build</div><h3>90+ builds.<br><em>shipped.</em></h3><p>voice agents, sourcing agents, 66 sites for tampa businesses and the dashboards behind them.</p><span>see the work →</span></a>
       <a class="door" href="#write" data-build><div class="kick">/write</div><h3>i write<br><em>every week.</em></h3><p>ai, in my opinion. an essay every week, plus a newsletter you can play.</p><span>play an edition →</span></a>
@@ -440,7 +448,8 @@ body.agent #swarm,body.agent .hud{display:none}
   <section data-sec="builds" style="padding-top:140px">
     <div class="bhead">
       <div><div class="kick" data-build>/build · what i make</div>
-      <h2 class="disp" data-build data-type style="margin-top:18px">90+ builds.<br><em>shipped.</em></h2></div>
+      <h2 class="disp" data-build data-type style="margin-top:18px">90+ builds.<br><em>shipped.</em></h2>
+      <p class="lede" data-build style="margin-top:20px">everyone wants an agent. i build mine.</p></div>
       <div class="brief" data-build>
         <div class="step">tell me what you're making</div>
         <p class="fill sm">i'm building <input id="q1" aria-label="what you're building" placeholder="an ai tool"> for <input id="q2" aria-label="who it's for" placeholder="our clinics">, and i need it <span class="when" id="qwhen"><button type="button" aria-pressed="true">in six weeks</button> / <button type="button" aria-pressed="false">this quarter</button> / <button type="button" aria-pressed="false">when it's right</button></span>.</p>
@@ -473,7 +482,6 @@ body.agent #swarm,body.agent .hud{display:none}
       <div class="row" data-build>voice agents<small>real calls, real practices, real follow-ups</small></div>
       <div class="row" data-build>dashboards<small>dense information made easy to see and use</small></div>
       <div class="row" data-build>web design<small>sites tuned for design, seo and ai search</small></div>
-      <div class="row" data-build>healthcare<small>the hospital floor, the pharmacy and the field</small></div>
       <div class="row" data-build>python<small>plus java, html and css</small></div>
     </div>
   </section>
@@ -536,11 +544,22 @@ body.agent #swarm,body.agent .hud{display:none}
   <section data-sec="about me">
     <div class="kick" data-build style="margin-bottom:26px">about me</div>
     <div class="loop">
-      <p class="belief" data-build>i like the idea of giving people their time back. i'm fascinated by what humans can achieve when they're not bogged down by repetitive tasks. that's why agentifying everything is so exciting.</p>
-      <div class="copy">
-        <p data-build>i grew up in hospitals, and worked as a hospital pharmacy tech compounding sterile iv meds.</p>
-        <p data-build>then i spent seven years in healthcare sales, across software, pharma and ai-enabled medical devices. i was always the one training the team on the new tech. now i build the agents.</p>
-        <p data-build>building them has shown me the difference between what ai can do and what it only pretends to do, and how much human judgment goes unnoticed until you try to reproduce it.</p>
+      <div class="me">
+        <p class="belief" data-build>hi, my name is simi.<br>busy isn't a personality.<br><em>i can fix that.</em></p>
+        <div class="purpose" data-build>
+          <p>i simplify complex systems and build agents for the repetitive work. i'm passionate about learning, and i'm fascinated by what humans can achieve when they have the freedom to follow their own curiosity.</p>
+        </div>
+      </div>
+      <div>
+        <div class="kick" data-build style="margin-bottom:6px">where i've worked</div>
+        <ul class="jobs" data-build>
+          <li><b>algate</b><span>independent rep for mindray, sonoscanner and magentiq ai</span></li>
+          <li><b>pfizer</b><span>hospital and branded sales</span></li>
+          <li><b>klara</b><span>practice management software</span></li>
+          <li><b>hospital pharmacy</b><span>sterile iv compounding</span></li>
+          <li><b>stem cell lab</b><span>wharton's jelly extraction</span></li>
+          <li><b>global ficcs</b><span>ultrasound programs in kenyan hospitals</span></li>
+        </ul>
       </div>
     </div>
     <div class="btns" data-build style="margin-top:44px"><a class="btn solid" href="#hire">hire me →</a></div>
@@ -654,7 +673,7 @@ var ESSAYS=[
 var ROUTES=[
  {who:'hiring',line:'see where i fit on your team.',
   prompt:'read simibharaj.me/llms.txt and simibharaj.me/builds.json. i\'m hiring for an ai role. what has simi built, where would she fit on my team, and draft a short note i can send her.',
-  ans:'<p><b>what she\'s built.</b> bella, a healthcare voice agent that calls practices and books the demo, plus 90+ other builds including 66 sites for tampa businesses.</p><p><b>where she fits.</b> putting ai in front of real people. a lifetime inside healthcare, and always the one training the team on new tech.</p><q>hi simi, we\'re hiring for [role] and your work on bella stood out. open to a call this week?</q>'},
+  ans:'<p><b>what she\'s built.</b> bella, a healthcare voice agent that calls practices and books the demo, plus 90+ other builds including 66 sites for tampa businesses.</p><p><b>where she fits.</b> tidying and optimizing workflows, and putting ai in front of real people.</p><q>hi simi, we\'re hiring for [role] and your work on bella stood out. open to a call this week?</q>'},
  {who:'founder',line:'get your build scoped.',
   prompt:'read simibharaj.me/llms.txt and simibharaj.me/builds.json. i need something built: [describe it]. what has simi shipped that\'s closest to my project, and draft a short message i can send her about it.',
   ans:'<p><b>closest work.</b> bella for outreach and follow-up. imaging scout for sourcing, with a human yes before anything gets bought.</p><p><b>how she builds.</b> she learns the job first, then builds the agent around it.</p><q>hi simi, i\'m building [your product] and want a first version by [date]. could we talk?</q>'},
@@ -663,7 +682,7 @@ var ROUTES=[
   ans:'<p><b>start here.</b> "my first shipped ai product." then play edition 05, game theory.</p><p><b>after that.</b> subscribe. one essay a week, written by someone building it.</p><q>read the newsletter → aiimo.substack.com</q>'},
  {who:'curious',line:'ask anything about me.',
   prompt:'read simibharaj.me/llms.txt. who is simi bharaj, what is she best at, and what is she working on right now?',
-  ans:'<p><b>who she is.</b> a ui/ux design engineer in tampa who builds ai agents, sites and dashboards, after a lifetime inside healthcare.</p><p><b>right now.</b> bella, client sites for local businesses, and a newsletter you can play every week.</p>'},
+  ans:'<p><b>who she is.</b> a ui/ux design engineer in tampa who simplifies complex systems with ai agents, sites and dashboards.</p><p><b>right now.</b> bella, client sites for local businesses, and a newsletter you can play every week.</p>'},
  {who:'developer',line:'plug this site into your agent.',
   prompt:'fetch simibharaj.me/llms.txt and simibharaj.me/builds.json, then summarize every build simi has shipped as a table with a link for each.',
   ans:'<p><b>what\'s there.</b> plain text at /llms.txt, the whole site as markdown at /index.md, and json at /builds.json, /writing.json and /profile.json.</p><p><b>no keys, no signup.</b> it\'s all static files.</p>'}
@@ -852,7 +871,7 @@ addEventListener('hashchange',route);route();
 /* ---- human / agent ---- */
 function agentText(){var L=[];
   L.push('# simi bharaj','ui/ux design engineer. ai design & development. simplifying complex systems. tampa.','',
-   'i\'ve spent my whole life inside healthcare, from the hospital floor to the field. now i build the agents, the sites and the dashboards that make complicated things easy to use.','',
+   'i simplify complex systems. i help businesses tidy and optimize their workflows.','',
    '## numbers','- 90+ builds shipped','- 66 custom websites for tampa businesses','- 60+ ai agents and workflows built and run','- 1,000+ hours building with ai','- 24,000+ prompts written and tested','- 210+ newsletter subscribers','- 7+ years in healthcare sales','',
    '## builds');
   FEATURED.concat(MORE).forEach(function(b,i){L.push((i+1)+'. '+b.t+': '+b.d+(b.url&&b.url[0]!=='#'?' '+(/^https?:/.test(b.url)?b.url:SITE+b.url):''));});

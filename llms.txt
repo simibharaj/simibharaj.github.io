@@ -1,7 +1,7 @@
 # simi bharaj
 ui/ux design engineer. ai design & development. simplifying complex systems. tampa.
 
-i've spent my whole life inside healthcare, from the hospital floor to the field. now i build the agents, the sites and the dashboards that make complicated things easy to use.
+i simplify complex systems. i help businesses tidy and optimize their workflows.
 
 ## numbers
 - 90+ builds shipped
