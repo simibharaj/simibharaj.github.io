@@ -60,7 +60,7 @@
     "lang": null
    },
    "simibharaj.github.io": {
-    "pushed": "2026-11-25T19:56:09Z",
+    "pushed": "2026-11-26T19:36:58Z",
     "lang": "HTML"
    },
    "snake-draft-copilot": {
@@ -82,9 +82,17 @@
   "05",
   "06"
  ],
- "updated": "2026-11-26T19:36:57Z",
+ "updated": "2026-11-27T19:28:00Z",
  "problems": [],
  "posts": [
+  {
+   "title": "The perfect Thanksgiving. Generated.",
+   "sub": "Six AI stories for the table. The gravy is smiling at you.",
+   "url": "https://aiimo.substack.com/p/the-perfect-thanksgiving-generated",
+   "date": "2026-11-26",
+   "img": "https://substackcdn.com/image/fetch/$s_!tLBD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1072d946-902f-499a-ae5d-d29068fc16ec_1080x720.jpeg",
+   "edition": null
+  },
   {
    "title": "game theory",
    "sub": "hint: tit for tat",
@@ -174,5 +182,5 @@
    "edition": null
   }
  ],
- "post_count": 11
+ "post_count": 12
 }
